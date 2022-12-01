@@ -1,11 +1,11 @@
-import { fetchAllBeaches } from '../apis/beaches'
+import { getAllBeaches } from '../apis/beaches'
 
 
 export function getAllBeachesThunk() {
   return (dispatch) => {
-   getBeaches()
+   getAllBeaches()
    .then((beaches) => {
-      dispatch(getAllBeaches(beaches))
+      dispatch(getAllBeachesAction(beaches))
    })
    .catch((err) => {
     console.log(err.message)
