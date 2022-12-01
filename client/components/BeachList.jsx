@@ -1,24 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
-function beachList() {
-  const fruits = useSelector((state) => state.fruits)
+import { getAllBeachesThunk } from '../actions'
+
+function BeachList() {
+  const beaches = useSelector((state) => state.beaches)
+
   const dispatch = useDispatch()
+
   useEffect(() => {
-    dispatch(fetchFruits())
+    dispatch(getAllBeachesThunk())
   }, [])
 
   return (
-    <>
-      <div className="app">
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>
-          {fruits.map((fruit) => (
-            <li key={fruit}>{fruit}</li>
-          ))}
-        </ul>
-      </div>
-    </>
+    <div>
+      <h1>Beach list is showing...</h1>
+      <ul>
+        {beaches &&
+          beaches.map((beach) => {
+            return <li>each beach</li>
+          })}
+      </ul>
+    </div>
   )
 }
 
-export default beachList
+export default BeachList
