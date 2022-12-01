@@ -7,7 +7,7 @@ function getAllBeaches(db = connection) {
   return db('beaches').select()
 }
 
-function getBeachById(db = connection){
+function getBeachById(id, db = connection){
   return db('beaches').select().where('id', id).first()
 
 }
