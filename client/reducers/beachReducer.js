@@ -1,11 +1,11 @@
-import { SET_FRUITS } from '../actions'
+import { GET_BEACHES } from '../actions'
 
 const initialState = []
 
 const reducer = (state = initialState, action) => {
   const { type, payload } = action
   switch (type) {
-    case SET_FRUITS:
+    case GET_BEACHES:
       return payload
     default:
       return state
