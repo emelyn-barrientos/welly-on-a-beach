@@ -1,18 +1,14 @@
-import { getFruits } from '../apis/fruits'
+import { fetchAllBeaches } from '../apis/beaches'
 
-export const SET_FRUITS = 'SET_FRUITS'
 
-export function setFruits(fruits) {
-  return {
-    type: SET_FRUITS,
-    payload: fruits,
-  }
-}
-
-export function fetchFruits() {
+export function getAllBeachesThunk() {
   return (dispatch) => {
-    return getFruits().then((fruits) => {
-      dispatch(setFruits(fruits))
-    })
+   getBeaches()
+   .then((beaches) => {
+      dispatch(getAllBeaches(beaches))
+   })
+   .catch((err) => {
+    console.log(err.message)
+   })
   }
 }
