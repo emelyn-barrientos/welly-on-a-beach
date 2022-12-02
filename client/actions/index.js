@@ -1,11 +1,9 @@
-import { getAllBeaches } from '../apis/beaches'
 import { getWellyWeatherData, getBeachWindData } from '../apis/weather'
+import { getAllBeaches } from '../apis/index.js'
 
 export const GET_BEACHES = 'GET_BEACHES'
 export const GET_WELLY_WEATHER = 'GET_WELLY_WEATHER'
 export const GET_BEACH_WIND = 'GET_BEACH_WIND'
-
-//ACTIONS
 
 export function getAllBeachesAction(beaches) {
   return {
