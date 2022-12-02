@@ -7,6 +7,8 @@ function BeachCard(props) {
     <div>
       <li key={id}>
         <p>{name}</p>
+        <p>Placeholder for wind speed.</p>
+        <p>Placeholder for wind direction.</p>
         <img
           src={`/images/${id}.jpg`}
           alt={`${name} on a summer day.`}
