@@ -1,13 +1,18 @@
 import React from 'react'
 
 function BeachCard(props) {
-  const { id, name, description, latitude, longitude } = props
+  const { id, name } = props.beach
 
   return (
     <div>
-      <li>
-        {name}
-        {description}
+      <li key={id}>
+        <p>{name}</p>
+        <img
+          src={`/images/${id}.jpg`}
+          alt={`${name} on a summer day.`}
+          width={'500'}
+          height={'300'}
+        />
       </li>
     </div>
   )
