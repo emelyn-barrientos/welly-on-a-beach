@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
+import BeachCard from './BeachCard'
+
 import { getAllBeachesThunk } from '../actions'
 
 function BeachList() {
-  const beaches = useSelector((state) => state.beaches)
+  const beaches = useSelector((store) => store.beaches)
 
   const dispatch = useDispatch()
 
@@ -18,7 +20,7 @@ function BeachList() {
       <ul>
         {beaches &&
           beaches.map((beach) => {
-            return <li>each beach</li>
+            return <BeachCard key={beach.id} beach={beach} />
           })}
       </ul>
     </div>
