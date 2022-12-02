@@ -21,17 +21,11 @@ export function getWellyWeatherData(time) {
     .set('x-api-key', process.env.MET_KEY)
     .set('accept', 'application/json')
     .then((res) => {
-      console.log(res.body)
-      console.log(res.body.variables)
-      // console.log(airTemp)
-      // const cloudCover = res.body.variables.cloudCoverVar.data[0]
-      // console.log(cloudCover)
-      // const windDirection = res.body.variables.windDirectionVar.data[0]
-      // console.log(windDirection)
-      // const windSpeed = res.body.variables.windSpeedVar.data[0]
-      // console.log(windSpeed)
-      // return { airTemp, cloudCover, windDirection, windSpeed }
-      return res.body
+      const airTemp = res.body.variables[airTempVar].data[0]
+      const cloudCover = res.body.variables[cloudCoverVar].data[0]
+      const windDirection = res.body.variables[windDirectionVar].data[0]
+      const windSpeed = res.body.variables[windSpeedVar].data[0]
+      return { airTemp, cloudCover, windDirection, windSpeed }
     })
     .catch((err) => {
       console.log('Err message: ' + err)
