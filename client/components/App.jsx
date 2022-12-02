@@ -1,6 +1,7 @@
 import React from 'react'
 
 import BeachList from './BeachList'
+import BeachDetails from './BeachDetails'
 
 function App() {
   return (
@@ -10,5 +11,7 @@ function App() {
     </div>
   )
 }
+
+
 
 export default App
