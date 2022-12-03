@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getBeachWindDataThunk } from '../actions'
 import { getTime } from '../utils'
 
+import { Card, CardContent, CardMedia, CardActionArea } from '@mui/material'
+
 function BeachCard(props) {
   const { id, name, latitude, longitude } = props.beach
   const dispatch = useDispatch()
@@ -36,19 +38,26 @@ function BeachCard(props) {
 
   return (
     <div>
-      <li key={id}>
-        <p>Wind Speed: {windData && windData[id] && windData[id].windSpeed}</p>
-        <p>
-          Wind Direction:{' '}
-          {windData && windData[id] && windData[id].windDirection}
-        </p>
-        <img
-          src={`/images/${id}.jpg`}
-          alt={`${name} on a summer day.`}
-          width={'500'}
-          height={'300'}
-        />
-      </li>
+      <Card sx={{ maxWidth: 345 }} key={id}>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height="300"
+            image={`/images/${id}.jpg`}
+            alt={`${name} on a summer day.`}
+          />
+          <CardContent sx={{ boxShadow: 1 }}>
+            <p>{name}</p>
+            <p>
+              Wind Speed: {windData && windData[id] && windData[id].windSpeed}
+            </p>
+            <p>
+              Wind Direction:{' '}
+              {windData && windData[id] && windData[id].windDirection}
+            </p>
+          </CardContent>
+        </CardActionArea>
+      </Card>
     </div>
   )
 }
