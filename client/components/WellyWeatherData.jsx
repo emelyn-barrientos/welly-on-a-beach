@@ -5,12 +5,20 @@ import { getTime } from '../utils'
 
 export default function WellyWeatherData() {
   const dispatch = useDispatch()
-  const weatherData = useSelector((store) => store.weather)
 
-  useEffect(() => {
-    const time = getTime()
-    dispatch(getWellyWeatherDataThunk(time))
-  }, [])
+  // UNCOMMENT THE BELOW AFTER DEVELOPMENT AND DELETE HARD CODED DATA:
+  const weatherData = {
+    airTemp: 16,
+    cloudCover: 0,
+    windDirection: 313,
+    windSpeed: 12,
+  }
+  // const weatherData = useSelector((store) => store.weather)
+
+  // useEffect(() => {
+  //   const time = getTime()
+  //   dispatch(getWellyWeatherDataThunk(time))
+  // }, [])
 
   return (
     <>
