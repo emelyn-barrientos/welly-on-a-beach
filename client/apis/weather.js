@@ -33,8 +33,6 @@ export function getWellyWeatherData(time) {
 }
 
 export function getBeachWindData(latitude, longitude, time) {
-  //wind speed and direction only
-  console.log('fetching wind data')
   const url = `https://forecast-v2.metoceanapi.com/point/time?lat=${latitude}&lon=${longitude}&variables=wind.speed.at-10m,wind.direction.at-10m&from=${time}`
   return request
     .get(url)
@@ -44,6 +42,21 @@ export function getBeachWindData(latitude, longitude, time) {
       const windDirection = res.body.variables['wind.direction.at-10m'].data[0]
       const windSpeed = res.body.variables['wind.speed.at-10m'].data[0]
       return { windSpeed, windDirection }
+    })
+    .catch((err) => {
+      console.log('Err message: ' + err)
+    })
+}
+
+export function getUV(time) {
+  const url =
+    'https://api.openuv.io/api/v1/uv?lat=-41.29&lng=174.78&dt=2018-01-24T10:50:52.283Z'
+  return request
+    .get(url)
+    .set('x-access-token', process.env.UV_KEY)
+    .then((res) => {
+      const uv = res.body
+      return uv
     })
     .catch((err) => {
       console.log('Err message: ' + err)
