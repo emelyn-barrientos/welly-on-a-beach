@@ -3,6 +3,9 @@ import { useSelector } from 'react-redux'
 
 import { useParams } from 'react-router-dom'
 
+import { Typography } from '@mui/material'
+import { Container } from '@mui/system'
+
 function BeachDetails() {
   const { id } = useParams()
 
@@ -27,15 +30,38 @@ function BeachDetails() {
 
   return (
     <div>
-      <p>Name: {beach.name}</p>
-      <p>Description: {beach.description}</p>
-      <img
-        src={`/images/${id}.jpg`}
-        alt={beach.name}
-        width={'500'}
-        height={'300'}
-      />
-      <p>Wind data: 35 kmph</p>
+      <Container maxWidth="lg">
+        <Typography
+          variant="h3"
+          sx={{
+            marginBlock: 2,
+          }}
+        >
+          {beach.name}
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            marginBlock: 1,
+          }}
+        >
+          {beach.description}
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            marginBlock: 1,
+          }}
+        >
+          <strong>Wind data: </strong>35 kmph
+        </Typography>
+        <img
+          src={`/images/${id}.jpg`}
+          alt={beach.name}
+          width={'500'}
+          height={'300'}
+        />
+      </Container>
     </div>
   )
 }
