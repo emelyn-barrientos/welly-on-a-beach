@@ -24,12 +24,17 @@ function App() {
         fontSize: '2rem',
         fontWeight: 500,
       },
+      subtitle1: {
+        fontSize: '1.75rem',
+        fontWeight: 300,
+      },
       body1: {
-        fontSize: '0.8rem',
+        fontSize: '1.5rem',
         fontWeight: 400,
       },
-      subtitle1: {
+      body2: {
         fontSize: '1rem',
+        fontWeight: 400,
       },
     },
   })
