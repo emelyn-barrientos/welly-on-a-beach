@@ -55,12 +55,7 @@ function BeachDetails() {
         >
           <strong>Wind data: </strong>35 kmph
         </Typography>
-        <img
-          src={`/images/${id}.jpg`}
-          alt={beach.name}
-          width={'90%vh'}
-          align={'center'}
-        />
+        <img src={`/images/${id}.jpg`} alt={beach.name} width={'90%vw'} />
       </Container>
     </div>
   )
