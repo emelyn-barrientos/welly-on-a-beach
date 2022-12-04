@@ -6,14 +6,9 @@ const reducer = (state = initialState, action) => {
   const { type, payload } = action
   switch (type) {
     case GET_WELLY_WEATHER:
-      return { ...state, data: payload }
+      return { ...state, metData: payload }
     case GET_WELLY_UV:
-      if (state.data) {
-        state.data.uv = payload
-        return state
-      } else {
-        return payload
-      }
+      return { ...state, uv: payload }
     default:
       return state
   }
