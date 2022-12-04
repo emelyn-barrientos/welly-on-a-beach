@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getWellyWeatherDataThunk } from '../actions'
 import { getTime } from '../utils'
 
-export default function WellyWeatherData() {
+function WellyWeatherData() {
   const dispatch = useDispatch()
 
   // UNCOMMENT THE BELOW AFTER DEVELOPMENT AND DELETE HARD CODED DATA:
@@ -28,3 +28,5 @@ export default function WellyWeatherData() {
     </>
   )
 }
+
+export default WellyWeatherData
