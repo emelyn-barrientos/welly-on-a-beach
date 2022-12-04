@@ -21,10 +21,16 @@ export function getWellyWeatherData(time) {
     .set('x-api-key', process.env.MET_KEY)
     .set('accept', 'application/json')
     .then((res) => {
-      const airTemp = res.body.variables[airTempVar].data[0]
-      const cloudCover = res.body.variables[cloudCoverVar].data[0]
-      const windDirection = res.body.variables[windDirectionVar].data[0]
-      const windSpeed = res.body.variables[windSpeedVar].data[0]
+      const airTemp = Math.round(res.body.variables[airTempVar].data[0] - 273) //convert from K to C
+      const cloudCover = Math.round(
+        res.body.variables[cloudCoverVar].data[0] * 100
+      ) //covert decimal to %
+      const windDirection = Math.round(
+        res.body.variables[windDirectionVar].data[0]
+      )
+      const windSpeed = Math.round(
+        res.body.variables[windSpeedVar].data[0] * 3.6
+      ) //convert m/s to km/h
       return { airTemp, cloudCover, windDirection, windSpeed }
     })
     .catch((err) => {
@@ -39,8 +45,12 @@ export function getBeachWindData(latitude, longitude, time) {
     .set('x-api-key', process.env.MET_KEY)
     .set('accept', 'application/json')
     .then((res) => {
-      const windDirection = res.body.variables['wind.direction.at-10m'].data[0]
-      const windSpeed = res.body.variables['wind.speed.at-10m'].data[0]
+      const windDirection = Math.round(
+        res.body.variables['wind.direction.at-10m'].data[0]
+      )
+      const windSpeed = Math.round(
+        res.body.variables['wind.speed.at-10m'].data[0] * 3.6
+      ) //convert m/s to km/h
       return { windSpeed, windDirection }
     })
     .catch((err) => {
