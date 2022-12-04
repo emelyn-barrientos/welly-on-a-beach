@@ -1,6 +1,9 @@
 exports.up = function (knex) {
-  knex.schema.createTable('reviews', (table) => {
+  return knex.schema.createTable('reviews', (table) => {
     table.increments('id').primary()
+    table.integer('beaches_id').references('beaches.id')
+    table.date('date_posted')
+    table.string('review')
   })
 }
 
