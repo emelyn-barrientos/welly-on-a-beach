@@ -58,8 +58,7 @@ function BeachDetails() {
         <img
           src={`/images/${id}.jpg`}
           alt={beach.name}
-          width={'500'}
-          height={'300'}
+          width={'90%vh'}
           align={'center'}
         />
       </Container>
