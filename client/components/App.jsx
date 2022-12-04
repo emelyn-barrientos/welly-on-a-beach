@@ -7,6 +7,7 @@ import WellyWeatherData from './WellyWeatherData'
 
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { Container } from '@mui/system'
+import HomeNav from './HomeNav'
 
 function App() {
   const theme = createTheme({
@@ -44,6 +45,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Container maxWidth="lg">
           <WellyWeatherData />
+          <HomeNav />
           <Routes>
             <Route path="/" element={<BeachList />} />
             <Route path="/beach/:id" element={<BeachDetails />} />
