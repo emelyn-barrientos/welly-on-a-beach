@@ -60,6 +60,7 @@ function BeachDetails() {
           alt={beach.name}
           width={'500'}
           height={'300'}
+          align={'center'}
         />
       </Container>
     </div>
