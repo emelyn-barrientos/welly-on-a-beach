@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getWellyUVThunk, getWellyWeatherDataThunk } from '../actions'
+import { getWellyUVDataThunk, getWellyWeatherDataThunk } from '../actions'
 import { getTime } from '../utils'
 
 function WellyWeatherData() {
@@ -20,7 +20,7 @@ function WellyWeatherData() {
   // useEffect(() => {
   //   const time = getTime()
   //   dispatch(getWellyWeatherDataThunk(time))
-  //   dispatch(getWellyUVThunk())
+  //   dispatch(getWellyUVDataThunk())
   // }, [])
 
   return (

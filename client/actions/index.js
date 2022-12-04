@@ -1,4 +1,8 @@
-import { getWellyWeatherData, getBeachWindData, getUV } from '../apis/weather'
+import {
+  getWellyWeatherData,
+  getBeachWindData,
+  getUVData,
+} from '../apis/weather'
 import { getAllBeaches } from '../apis/index.js'
 
 export const GET_BEACHES = 'GET_BEACHES'
@@ -27,7 +31,7 @@ export function getBeachWindDataAction(windData, id) {
   }
 }
 
-export function getWellyUVAction(uv) {
+export function getWellyUVDataAction(uv) {
   return {
     type: GET_WELLY_UV,
     payload: uv,
@@ -72,11 +76,11 @@ export function getBeachWindDataThunk(latitude, longitude, time, beach_id) {
   }
 }
 
-export function getWellyUVThunk() {
+export function getWellyUVDataThunk() {
   return (dispatch) => {
-    getUV()
+    getUVData()
       .then((uv) => {
-        dispatch(getWellyUVAction(uv))
+        dispatch(getWellyUVDataAction(uv))
       })
       .catch((err) => {
         console.log(err.message)

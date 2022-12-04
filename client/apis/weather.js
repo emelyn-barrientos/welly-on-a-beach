@@ -61,7 +61,7 @@ export function getBeachWindData(latitude, longitude, time) {
     })
 }
 
-export function getUV() {
+export function getUVData() {
   const url = `https://api.openuv.io/api/v1/uv?lat=-41.29&lng=174.78`
   return request
     .get(url)
