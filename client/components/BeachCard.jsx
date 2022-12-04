@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getBeachWindDataThunk } from '../actions'
 import { getTime } from '../utils'
+import { Link } from 'react-router-dom'
 
 import { Card, CardContent, CardMedia, CardActionArea } from '@mui/material'
 
@@ -39,24 +40,26 @@ function BeachCard(props) {
   return (
     <div>
       <Card sx={{ maxWidth: 345 }} key={id}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="300"
-            image={`/images/${id}.jpg`}
-            alt={`${name} on a summer day.`}
-          />
-          <CardContent sx={{ boxShadow: 1 }}>
-            <p>{name}</p>
-            <p>
-              Wind Speed: {windData && windData[id] && windData[id].windSpeed}
-            </p>
-            <p>
-              Wind Direction:{' '}
-              {windData && windData[id] && windData[id].windDirection}
-            </p>
-          </CardContent>
-        </CardActionArea>
+        <Link to={`/beach/${id}`}>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="300"
+              image={`/images/${id}.jpg`}
+              alt={`${name} on a summer day.`}
+            />
+            <CardContent sx={{ boxShadow: 1 }}>
+              <p>{name}</p>
+              <p>
+                Wind Speed: {windData && windData[id] && windData[id].windSpeed}
+              </p>
+              <p>
+                Wind Direction:{' '}
+                {windData && windData[id] && windData[id].windDirection}
+              </p>
+            </CardContent>
+          </CardActionArea>
+        </Link>
       </Card>
     </div>
   )
