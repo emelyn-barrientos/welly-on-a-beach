@@ -4,7 +4,13 @@ import { getBeachWindDataThunk } from '../actions'
 import { getTime } from '../utils'
 import { Link } from 'react-router-dom'
 
-import { Card, CardContent, CardMedia, CardActionArea } from '@mui/material'
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  CardActionArea,
+  Typography,
+} from '@mui/material'
 
 function BeachCard(props) {
   const { id, name, latitude, longitude } = props.beach
@@ -49,14 +55,31 @@ function BeachCard(props) {
               alt={`${name} on a summer day.`}
             />
             <CardContent sx={{ boxShadow: 1 }}>
-              <p>{name}</p>
-              <p>
+              <Typography
+                variant="h3"
+                sx={{
+                  marginBlock: 2,
+                }}
+              >
+                {name}
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  marginBlock: 1,
+                }}
+              >
                 Wind Speed: {windData && windData[id] && windData[id].windSpeed}
-              </p>
-              <p>
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  marginBlock: 1,
+                }}
+              >
                 Wind Direction:{' '}
                 {windData && windData[id] && windData[id].windDirection}
-              </p>
+              </Typography>
             </CardContent>
           </CardActionArea>
         </Link>
