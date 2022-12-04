@@ -74,9 +74,6 @@ If I'm really stressed, I do tend to get short with people which I know is not v
 **Alyssa**:
 I am very vocal and wear my stress profile on my sleeve. If I'm stressed, I'm probably showing it. I can overdo this and it can negatively impact the team if I have gone too far with my vocal venting/stressing. I don't tend to get angry or short with people, but sometimes I can if I'm really stressed. In times when I'm stressed, I can also be hyperfocussed due to ADHD, so it's good if someone can pull me away 1:1 to chat, vent, go for a walk, get some water.
 
-> Yosan: Can we please have each person’s stress profile written here so we all know how to spot when someone is stressed?
-> 
-
 ## Other:
 
 Everyone be aware of the vibe in team - remind each other to have fun.
@@ -90,3 +87,25 @@ Stuff quiz same time every day - 3pm
 Regular check-in in the morning - 9.15am (after mindfulness)
 
 Drinks with code is okay with the team
+
+## Team Retro 1:
+
+**CONTINUE**
+- PR Reviews
+- Maintain chill/relaxed vibe through final days of project
+- Organic stand ups that are quick for bigger team decisions
+- Backlog/kanban process in Github
+- Awesome job of asking each other & facilitators for help
+
+**START** 
+- Get more sleep! ACTION: Paola to send a reminder around every evening on our Slack channel that we should be winding down around 10pm.
+- More team breaks & individual breaks. ACTION: Kelsey to give more frequent reminders & hard breaks at 3pm to do Stuff quiz together as team
+- More wireframing page elements
+- Snacks! And "beverages". ACTION: Alyssa in charge! 
+
+**STOP**
+- Getting sidetracked; keep conversations/discussions concise
+
+
+
+
