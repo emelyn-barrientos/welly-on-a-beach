@@ -3,13 +3,14 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getWellyUVDataThunk, getWellyWeatherDataThunk } from '../actions'
 import { getTime } from '../utils'
 import WindWidget from './WindWidget'
+import UVWidget from './UVWidget'
 
 function WellyWeatherData() {
   const dispatch = useDispatch()
 
   // UNCOMMENT THE BELOW AFTER DEVELOPMENT AND DELETE HARD CODED DATA:
   const weatherData = {
-    uv: 7,
+    uv: 5,
     metData: {
       airTemp: 15,
       cloudCover: 38,
@@ -55,7 +56,7 @@ function WellyWeatherData() {
         {weatherData && weatherData.metData && weatherData.metData.rainRate}{' '}
         mm/h
       </div>
-      <div>UV: {weatherData && weatherData.uv}</div>
+      {weatherData && <UVWidget uv={weatherData.uv} size="100" />}
     </div>
   )
 }
