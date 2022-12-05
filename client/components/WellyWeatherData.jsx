@@ -5,6 +5,7 @@ import { getTime } from '../utils'
 import WindWidget from './WindWidget'
 import TempWidget from './TempWidget'
 import UVWidget from './UVWidget'
+import WeatherIconWidget from './WeatherIconWidget'
 
 function WellyWeatherData() {
   const dispatch = useDispatch()
@@ -30,16 +31,17 @@ function WellyWeatherData() {
   // }, [])
 
   return (
-    <div>
-      <div>
-        {weatherData && weatherData.metData && (
-          <TempWidget temp={weatherData.metData.airTemp} size="100" />
-        )}
-      </div>
-      <div>
-        Cloud Cover:{' '}
-        {weatherData && weatherData.metData && weatherData.metData.cloudCover} %
-      </div>
+    <div className="welly-weather-widget">
+      {weatherData && weatherData.metData && (
+        <WeatherIconWidget
+          rainRate={weatherData.metData.rainRate}
+          cloudCover={weatherData.metData.cloudCover}
+          size="100"
+        />
+      )}
+      {weatherData && weatherData.metData && (
+        <TempWidget temp={weatherData.metData.airTemp} size="100" />
+      )}
       {weatherData && weatherData.metData && (
         <WindWidget
           windDirection={
@@ -53,11 +55,6 @@ function WellyWeatherData() {
           size="100"
         />
       )}
-      <div>
-        Rain Rate:{' '}
-        {weatherData && weatherData.metData && weatherData.metData.rainRate}{' '}
-        mm/h
-      </div>
       {weatherData && <UVWidget uv={weatherData.uv} size="100" />}
     </div>
   )
