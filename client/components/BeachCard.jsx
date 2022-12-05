@@ -11,9 +11,10 @@ import {
   CardActionArea,
   Typography,
 } from '@mui/material'
+import BeachWindWidget from './BeachWindWidget'
 
 function BeachCard(props) {
-  const { id, name, latitude, longitude } = props.beach
+  const { id, name, latitude, longitude, orientation } = props.beach
   const dispatch = useDispatch()
 
   // UNCOMMENT BELOW AND DELETE HARD CODED DATA AFTER DEVELOPMENT COMPLETE.
@@ -68,7 +69,12 @@ function BeachCard(props) {
             </Typography>
             <Typography variant="body1">
               Wind direction:{' '}
-              {windData && windData[id] && windData[id].windDirection}
+              {windData && windData[id] && (
+                <BeachWindWidget
+                  orientation={orientation}
+                  windDirection={windData[id].windDirection}
+                />
+              )}
             </Typography>
           </CardContent>
         </CardActionArea>
