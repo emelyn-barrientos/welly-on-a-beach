@@ -4,6 +4,15 @@ export function getTime() {
   return timeString
 }
 
+export function getLocalWellyDate(date) {
+  console.log(typeof date)
+  const otherDate = new Date(date)
+  console.log('otherDate: ', otherDate)
+  const wellyDateString = otherDate.toDateString()
+  console.log('wellyDateString: ', wellyDateString)
+  return wellyDateString
+}
+
 export function getPointsFromAngle(angle, vector_length, start_position) {
   //angle given is direction from which wind is blowing (360 is northerly)
   const radians = degreesToRadians(angle - 180)
