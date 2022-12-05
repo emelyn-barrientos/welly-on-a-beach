@@ -7,6 +7,7 @@ import { Typography } from '@mui/material'
 import { Container } from '@mui/system'
 
 import HomeButton from './HomeButton'
+import BeachReviews from './BeachReviews'
 
 function BeachDetails() {
   const { id } = useParams()
@@ -31,10 +32,9 @@ function BeachDetails() {
   const beach = beaches.find((beach) => beach.id === Number(id))
 
   return (
-    
     <div>
       <Container maxWidth="lg">
-      <HomeButton />
+        <HomeButton />
         <Typography
           variant="h3"
           sx={{
@@ -60,6 +60,7 @@ function BeachDetails() {
           <strong>Wind data: </strong>35 kmph
         </Typography>
         <img src={`/images/${id}.jpg`} alt={beach.name} width={'90%vw'} />
+        <BeachReviews />
       </Container>
     </div>
   )
