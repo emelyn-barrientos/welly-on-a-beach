@@ -62,3 +62,17 @@ export function getUVLevel(uv, size) {
   width = (uv / maxLevel) * maxWidth
   return { level, colour, width }
 }
+
+export function chooseIcon(rainRate, cloudCover) {
+  let icon = ''
+  if (rainRate > 0) {
+    icon = 'rainy'
+  } else if (cloudCover > 50) {
+    icon = 'cloudy'
+  } else if (cloudCover > 25) {
+    icon = 'cloudySun'
+  } else {
+    icon = 'sun'
+  }
+  return icon
+}
