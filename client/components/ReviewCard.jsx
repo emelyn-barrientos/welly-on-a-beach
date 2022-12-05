@@ -30,13 +30,14 @@ function ReviewCard(props) {
               marginBlock: 1,
             }}
           >
-            {review}
+            {'"' + review + '"'}
           </Typography>
           <Typography
             variant="body2"
             sx={{
               marginBlock: 1,
               fontStyle: 'italic',
+              fontSize: '0.75rem',
             }}
           >
             Date post: {wellyDate}
