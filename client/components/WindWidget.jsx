@@ -56,7 +56,7 @@ function WindWidget({ windDirection, windSpeed, size }) {
           fill="white"
         />
         <text
-          x={(size * 0.41).toString()}
+          x={(size * 0.39).toString()}
           y={(size * 0.56).toString()}
           fill="black"
           fontSize={size * 0.2 + 'px'}
