@@ -33,8 +33,8 @@ function BeachDetails() {
   return (
     
     <div>
-      <HomeButton />
       <Container maxWidth="lg">
+      <HomeButton />
         <Typography
           variant="h3"
           sx={{
