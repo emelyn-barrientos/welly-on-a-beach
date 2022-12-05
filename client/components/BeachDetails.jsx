@@ -3,8 +3,7 @@ import { useSelector } from 'react-redux'
 
 import { useParams } from 'react-router-dom'
 
-import { Typography } from '@mui/material'
-import { Container } from '@mui/system'
+import { Typography, Box, Container } from '@mui/material'
 
 import HomeButton from './HomeButton'
 import BeachReviews from './BeachReviews'
@@ -32,17 +31,27 @@ function BeachDetails() {
   const beach = beaches.find((beach) => beach.id === Number(id))
 
   return (
-    <div>
-      <Container maxWidth="lg">
-        <HomeButton />
-        <Typography
-          variant="h3"
-          sx={{
-            marginBlock: 2,
-          }}
-        >
-          {beach.name}
-        </Typography>
+    <Container maxWidth="lg">
+      <HomeButton />
+      <Typography
+        variant="h1"
+        sx={{
+          marginBlock: 4,
+          textAlign: 'center',
+        }}
+      >
+        {beach.name}
+      </Typography>
+      <Typography
+        variant="body1"
+        sx={{
+          marginBlock: 4,
+          textAlign: 'center',
+        }}
+      >
+        <strong>Wind speed: </strong>35 kmph
+      </Typography>
+      <Box>
         <Typography
           variant="body1"
           sx={{
@@ -51,18 +60,16 @@ function BeachDetails() {
         >
           {beach.description}
         </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            marginBlock: 1,
-          }}
-        >
-          <strong>Wind data: </strong>35 kmph
-        </Typography>
-        <img src={`/images/${id}.jpg`} alt={beach.name} width={'90%vw'} />
-        <BeachReviews />
-      </Container>
-    </div>
+      </Box>
+      <Box
+        component="img"
+        src={`/images/${id}.jpg`}
+        maxWidth="md"
+        alt={beach.name}
+        sx={{ display: 'flex', justifyContent: 'center', marginBlock: 2 }}
+      />
+      <BeachReviews />
+    </Container>
   )
 }
 

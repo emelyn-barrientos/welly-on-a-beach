@@ -10,25 +10,13 @@ import WeatherIconWidget from './WeatherIconWidget'
 function WellyWeatherData() {
   const dispatch = useDispatch()
 
-  // UNCOMMENT THE BELOW AFTER DEVELOPMENT AND DELETE HARD CODED DATA:
-  const weatherData = {
-    uv: 5,
-    metData: {
-      airTemp: 15,
-      cloudCover: 38,
-      windDirection: 185,
-      windSpeed: 5,
-      rainRate: 0,
-    },
-  }
+  const weatherData = useSelector((store) => store.weather)
 
-  // const weatherData = useSelector((store) => store.weather)
-
-  // useEffect(() => {
-  //   const time = getTime()
-  //   dispatch(getWellyWeatherDataThunk(time))
-  //   dispatch(getWellyUVDataThunk())
-  // }, [])
+  useEffect(() => {
+    const time = getTime()
+    dispatch(getWellyWeatherDataThunk(time))
+    dispatch(getWellyUVDataThunk())
+  }, [])
 
   return (
     <div className="welly-weather-widget">

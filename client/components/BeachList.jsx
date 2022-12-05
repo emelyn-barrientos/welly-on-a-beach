@@ -6,6 +6,7 @@ import BeachCard from './BeachCard'
 import Grid from '@mui/material/Unstable_Grid2'
 
 import { getAllBeachesThunk } from '../actions'
+import { Typography } from '@mui/material'
 
 function BeachList() {
   const beaches = useSelector((store) => store.beaches)
@@ -18,7 +19,15 @@ function BeachList() {
 
   return (
     <div>
-      <h1>Beach list is showing...</h1>
+      <Typography
+        sx={{
+          marginBlock: 4,
+          textAlign: 'center',
+        }}
+        variant="h2"
+      >
+        Wellington beaches
+      </Typography>
       <Grid
         container
         rowSpacing={{ xs: 3, sm: 5, md: 7 }}
