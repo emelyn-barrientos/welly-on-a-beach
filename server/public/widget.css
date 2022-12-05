@@ -1,0 +1,36 @@
+.uv-bar-container {
+  display: flex;
+  align-content: center;
+  border: 1px solid #ccc;
+  background-color: white;
+  margin:auto
+}
+
+.uv-bar-fill {
+  border-style: none;
+  margin: auto 0;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.widget-container {
+  justify-content: center;
+  align-content: center;
+  margin: auto 0;
+  border: 1px solid #ccc;
+  border-radius: 10%;
+}
+
+.uv-text {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+.uv-title {
+  text-align: center;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
