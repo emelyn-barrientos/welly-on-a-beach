@@ -8,7 +8,6 @@ function ReviewCard(props) {
   const { id, review, date_posted } = props.review
 
   const wellyDate = getLocalWellyDate(date_posted)
-  console.log(wellyDate)
 
   return (
     <div>
