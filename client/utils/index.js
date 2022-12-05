@@ -5,11 +5,8 @@ export function getTime() {
 }
 
 export function getLocalWellyDate(date) {
-  console.log(typeof date)
   const otherDate = new Date(date)
-  console.log('otherDate: ', otherDate)
   const wellyDateString = otherDate.toDateString()
-  console.log('wellyDateString: ', wellyDateString)
   return wellyDateString
 }
 
