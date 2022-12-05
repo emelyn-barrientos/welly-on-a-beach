@@ -3,7 +3,6 @@ import { getUVLevel } from '../utils'
 
 function UVWidget({ uv, size }) {
   const { level, colour, width } = getUVLevel(uv, size)
-  console.log(level, colour, width)
   const maxWidth = size * 0.9
   return (
     <div
