@@ -3,7 +3,7 @@ exports.up = function (knex) {
     table.increments('id').primary()
     table.integer('beaches_id').references('beaches.id')
     table.date('date_posted')
-    table.string('review')
+    table.text('review')
   })
 }
 
