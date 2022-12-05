@@ -34,8 +34,7 @@ function WellyWeatherData() {
       <div>
         {weatherData && weatherData.metData && (
           <TempWidget temp={weatherData.metData.airTemp} size="100" />
-        )}{' '}
-        C
+        )}
       </div>
       <div>
         Cloud Cover:{' '}
