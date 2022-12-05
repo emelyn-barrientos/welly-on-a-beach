@@ -16,8 +16,8 @@ function WellyWeatherData() {
     metData: {
       airTemp: 15,
       cloudCover: 38,
-      windDirection: 349,
-      windSpeed: 31,
+      windDirection: 185,
+      windSpeed: 5,
       rainRate: 0,
     },
   }
