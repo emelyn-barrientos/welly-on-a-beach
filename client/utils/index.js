@@ -37,9 +37,12 @@ function degreesToRadians(angle) {
   return radians
 }
 
-export function getUVLevel(uv) {
+export function getUVLevel(uv, size) {
   let colour = ''
   let level = ''
+  let width = 0
+  const maxLevel = 11
+  const maxWidth = size * 0.9
   if (uv <= 2) {
     level = 'low'
     colour = '#FFBD00'
@@ -56,5 +59,6 @@ export function getUVLevel(uv) {
     level = 'extreme'
     colour = '#390099'
   }
-  return { level, colour }
+  width = (uv / maxLevel) * maxWidth
+  return { level, colour, width }
 }
