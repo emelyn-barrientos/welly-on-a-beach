@@ -53,6 +53,7 @@ function BeachCard(props) {
                 <BeachWindWidget
                   orientation={orientation}
                   windDirection={windData[id].windDirection}
+                  size="100"
                 />
               )}
             </Typography>
