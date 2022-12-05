@@ -46,43 +46,32 @@ function BeachCard(props) {
   return (
     <div>
       <Card sx={{ maxWidth: 345 }} key={id}>
-        <Link to={`/beach/${id}`}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="300"
-              image={`/images/${id}.jpg`}
-              alt={`${name} on a summer day.`}
-            />
-            <CardContent sx={{ boxShadow: 1 }}>
-              <Typography
-                variant="h3"
-                sx={{
-                  marginBlock: 2,
-                }}
-              >
-                {name}
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{
-                  marginBlock: 1,
-                }}
-              >
-                Wind Speed: {windData && windData[id] && windData[id].windSpeed}
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{
-                  marginBlock: 1,
-                }}
-              >
-                Wind Direction:{' '}
-                {windData && windData[id] && windData[id].windDirection}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Link>
+        <CardActionArea component={Link} to={`/beach/${id}`}>
+          <CardMedia
+            component="img"
+            height="250"
+            image={`/images/${id}.jpg`}
+            alt={`${name} on a summer day.`}
+          />
+          <CardContent>
+            <Typography
+              color="secondary"
+              variant="h3"
+              sx={{
+                marginBlock: 1.5,
+              }}
+            >
+              {name}
+            </Typography>
+            <Typography variant="body1">
+              Wind speed: {windData && windData[id] && windData[id].windSpeed}
+            </Typography>
+            <Typography variant="body1">
+              Wind direction:{' '}
+              {windData && windData[id] && windData[id].windDirection}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
       </Card>
     </div>
   )
