@@ -7,7 +7,6 @@ function WindWidget({ windDirection, windSpeed, size }) {
   const vectorLength = size * 0.37
   //Calculating offset of wind speed text to center in circle
   let offset = 0
-  console.log(windSpeed.toString())
   if (windSpeed.toString().length < 2) {
     offset = 0.45
   } else {
