@@ -1,9 +1,14 @@
 import React from 'react'
 
+import { getLocalWellyDate } from '../utils'
+
 import { Card, CardContent, Typography } from '@mui/material'
 
 function ReviewCard(props) {
   const { id, review, date_posted } = props.review
+
+  const wellyDate = getLocalWellyDate(date_posted)
+  console.log(wellyDate)
 
   return (
     <div>
@@ -34,7 +39,7 @@ function ReviewCard(props) {
               fontStyle: 'italic',
             }}
           >
-            Date post: {date_posted}
+            Date post: {wellyDate}
           </Typography>
         </CardContent>
       </Card>
