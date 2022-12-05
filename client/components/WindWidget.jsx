@@ -5,6 +5,14 @@ import { Card } from '@mui/material'
 
 function WindWidget({ windDirection, windSpeed, size }) {
   const vectorLength = size * 0.37
+  //Calculating offset of wind speed text to center in circle
+  let offset = 0
+  console.log(windSpeed.toString())
+  if (windSpeed.toString().length < 2) {
+    offset = 0.45
+  } else {
+    offset = 0.39
+  }
   const { x1, y1, x2, y2 } = getPointsFromAngle(
     windDirection,
     vectorLength,
@@ -60,7 +68,7 @@ function WindWidget({ windDirection, windSpeed, size }) {
             fill="white"
           />
           <text
-            x={(size * 0.39).toString()}
+            x={(size * offset).toString()}
             y={(size * 0.56).toString()}
             fill="#273469"
             fontSize={size * 0.2 + 'px'}
