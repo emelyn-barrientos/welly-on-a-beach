@@ -1,0 +1,48 @@
+.uv-bar-container {
+  display: flex;
+  align-content: center;
+  border: 1px solid #ccc;
+  background-color: white;
+  margin:auto
+}
+
+.uv-bar-fill {
+  border-style: none;
+  margin: auto 0;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.widget-container {
+  justify-content: center;
+  align-content: center;
+  margin: auto 0;
+  border: 1px solid #ccc;
+  border-radius: 10%;
+  font-family: 'Open Sans'
+}
+
+.uv-text {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+.temp-text {
+  text-align: center;
+  place-self: center;
+}
+
+.degrees-text {
+  text-align: center;
+  place-self: center;
+  text-justify: center;
+}
+
+.temp-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20%;
+  justify-content: center;
+}

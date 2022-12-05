@@ -1,8 +1,7 @@
 import React from 'react'
 import { getPointsFromAngle } from '../utils'
 
-function WindWidget(props) {
-  const { windDirection, windSpeed, size } = props
+function WindWidget({ windDirection, windSpeed, size }) {
   const vectorLength = size * 0.38
   const { x1, y1, x2, y2 } = getPointsFromAngle(
     windDirection,
@@ -10,7 +9,10 @@ function WindWidget(props) {
     size * 0.5
   )
   return (
-    <div>
+    <div
+      className="widget-container"
+      style={{ width: `${size}px`, height: `${size}px` }}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
@@ -20,7 +22,7 @@ function WindWidget(props) {
         <circle
           cx={(size * 0.5).toString()}
           cy={(size * 0.5).toString()}
-          r={(size * 0.25).toString()}
+          r={(size * 0.3).toString()}
           stroke="black"
           strokeWidth="3"
           fill="none"
@@ -50,14 +52,14 @@ function WindWidget(props) {
         <circle
           cx={(size * 0.5).toString()}
           cy={(size * 0.5).toString()}
-          r={(size * 0.1).toString()}
+          r={(size * 0.15).toString()}
           fill="white"
         />
         <text
-          x={(size * 0.43).toString()}
-          y={(size * 0.55).toString()}
+          x={(size * 0.39).toString()}
+          y={(size * 0.56).toString()}
           fill="black"
-          fontSize={size * 0.15 + 'px'}
+          fontSize={size * 0.2 + 'px'}
           fontWeight="bold"
         >
           {windSpeed}
