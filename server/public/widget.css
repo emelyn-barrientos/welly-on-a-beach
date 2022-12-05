@@ -46,3 +46,21 @@
   margin-top: 20%;
   justify-content: center;
 }
+
+.welly-weather-widget {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 5px;
+}
+
+.welly-weather-widget-header {
+  width: 100%;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-bottom: 5px;
+  display: flex;
+  font-family: 'Open Sans';
+}
