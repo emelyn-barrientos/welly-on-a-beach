@@ -6,6 +6,8 @@ import { useParams } from 'react-router-dom'
 import { Typography } from '@mui/material'
 import { Container } from '@mui/system'
 
+import HomeButton from './HomeButton'
+
 function BeachDetails() {
   const { id } = useParams()
 
@@ -29,8 +31,10 @@ function BeachDetails() {
   const beach = beaches.find((beach) => beach.id === Number(id))
 
   return (
+    
     <div>
       <Container maxWidth="lg">
+      <HomeButton />
         <Typography
           variant="h3"
           sx={{
