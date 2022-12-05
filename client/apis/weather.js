@@ -19,7 +19,6 @@ export function getWellyWeatherData(time) {
     ',' +
     rainRateVar
   const url = `https://forecast-v2.metoceanapi.com/point/time?lat=${latitude}&lon=${longitude}&variables=${allVar}&from=${time}`
-  console.log(url)
   return request
     .get(url)
     .set('x-api-key', process.env.MET_KEY)
