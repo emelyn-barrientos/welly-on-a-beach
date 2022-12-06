@@ -6,6 +6,7 @@ exports.up = function (knex) {
     table.text('description')
     table.string('latitude')
     table.string('longitude')
+    table.text('location')
   })
 }
 
