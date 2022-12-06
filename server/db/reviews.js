@@ -5,7 +5,6 @@ function getReviewsByBeachId(id, db = connection) {
 }
 
 function addReview(newReview, db = connection) {
-  console.log('addReviewByBeachId newReview: ', newReview)
   return db('reviews').insert(newReview)
 }
 

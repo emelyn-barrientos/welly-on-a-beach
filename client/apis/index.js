@@ -9,12 +9,10 @@ export function getAllBeaches() {
 }
 
 export function addReview(newReview) {
-  console.log('addReview(newReview): ', newReview)
   return request
     .post(rootUrl + '/beaches')
     .send(newReview)
     .then((res) => {
-      console.log('res: ', res)
       return res.body
     })
 }

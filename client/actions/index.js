@@ -3,21 +3,15 @@ import {
   getBeachWindData,
   getUVDataNIWA,
 } from '../apis/weather'
-<<<<<<< HEAD
-import { addReview, getAllBeaches } from '../apis/index.js'
-=======
-import { getAllBeaches, getBeachFeatures } from '../apis/index.js'
->>>>>>> main
+
+import { addReview, getAllBeaches, getBeachFeatures } from '../apis/index'
 
 export const GET_BEACHES = 'GET_BEACHES'
 export const GET_WELLY_WEATHER = 'GET_WELLY_WEATHER'
 export const GET_BEACH_WIND = 'GET_BEACH_WIND'
 export const GET_WELLY_UV = 'GET_WELLY_UV'
-<<<<<<< HEAD
 export const ADD_NEW_REVIEW = 'ADD_NEW_REVIEW'
-=======
 export const GET_BEACH_FEATURES = 'GET_BEACH_FEATURES'
->>>>>>> main
 
 export function getAllBeachesAction(beaches) {
   return {
@@ -55,7 +49,6 @@ export function getWellyUVDataAction(uv) {
 }
 
 export function addNewReviewAction(newReview) {
-  console.log('addNewReviewAction(newReview): ', newReview)
   return {
     type: ADD_NEW_REVIEW,
     payload: newReview,
@@ -65,7 +58,6 @@ export function addNewReviewAction(newReview) {
 //THUNKS
 
 export function addNewReviewThunk(newReview) {
-  console.log('addNewReviewThunk(newReview): ', newReview)
   return (dispatch) => {
     addReview(newReview)
       .then((databaseReview) => {
@@ -137,6 +129,3 @@ export function getWellyUVDataThunk(time) {
       })
   }
 }
-
-//addNewReviewThunk
-//dispatch and ADD_ACITON

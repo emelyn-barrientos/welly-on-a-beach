@@ -19,7 +19,6 @@ function AddReview() {
   const dispatch = useDispatch()
 
   const handleChange = (evt) => {
-    console.log('target.value: ', evt.target.value)
     setNewReview({
       ...newReview,
       [evt.target.name]: evt.target.value,
@@ -30,7 +29,6 @@ function AddReview() {
     evt.preventDefault()
     newReview.date_posted = Date.now()
     newReview.beaches_id = Number(id)
-    console.log('newReview: ', newReview)
     dispatch(addNewReviewThunk(newReview))
     setNewReview({
       review: '',
