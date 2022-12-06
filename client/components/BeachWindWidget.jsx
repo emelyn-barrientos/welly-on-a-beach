@@ -1,27 +1,24 @@
 import React from 'react'
-import { getPointsFromAngle } from '../utils'
+import { getPointsFromAngleForBeachWind } from '../utils'
 
 function BeachWindWidget({ orientation, windDirection, size }) {
   const angleRelativeToBeach = windDirection - orientation
   const vectorLength = size * 0.3
-  const { x2, y2 } = getPointsFromAngle(
+  const { x1, y1, x2, y2 } = getPointsFromAngleForBeachWind(
     angleRelativeToBeach,
-    vectorLength,
-    size * 0.5
+    vectorLength
   )
-  const x1 = 50
-  const y1 = 50
 
   return (
     <div
       className="widget-container"
-      style={{ width: `${size}px`, height: `${size * 2}px` }}
+      style={{ width: `${size}px`, height: `${size}px` }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox={'0 0' + size + ' ' + size / 2}
+        viewBox={'0 0' + ' ' + size + ' ' + size * 0.55}
         width={size}
-        height={size}
+        height={size * 0.55}
       >
         <defs>
           <marker
