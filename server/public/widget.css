@@ -52,6 +52,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   column-gap: 5px;
+  margin: auto;
 }
 
 .welly-weather-widget-header {
