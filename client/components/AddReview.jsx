@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { getLocalWellyDate } from '../utils'
+import { useParams } from 'react-router-dom'
 
-// import { FormControl, InputLabel, Input, FormHelperText } from '@mui/material'
 import { TextField, Button } from '@mui/material'
+import { addNewReviewThunk } from '../actions'
 
 function AddReview() {
+  const { id } = useParams()
+
   const [newReview, setNewReview] = useState({
     review: '',
     date_posted: '',
@@ -17,7 +19,6 @@ function AddReview() {
   const dispatch = useDispatch()
 
   const handleChange = (evt) => {
-    console.log('target.value: ', evt.target.value)
     setNewReview({
       ...newReview,
       [evt.target.name]: evt.target.value,
@@ -27,12 +28,12 @@ function AddReview() {
   const handleSubmit = (evt) => {
     evt.preventDefault()
     newReview.date_posted = Date.now()
-    console.log('newReview: ', newReview)
-    //   dispatch(addNewReview(newReview))
-    //   setNewReview({
-    //     review: '',
-    //     date_posted: '',
-    //   })
+    newReview.beaches_id = Number(id)
+    dispatch(addNewReviewThunk(newReview))
+    setNewReview({
+      review: '',
+      date_posted: '',
+    })
   }
 
   return (
