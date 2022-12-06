@@ -56,9 +56,7 @@ function BeachList() {
     const filteredBeaches = [...beaches]
     for (const beach of beaches) {
       for (const feature of selectedChips) {
-        if (beach.features.includes(feature)) {
-          console.log(feature, 'is in', beach.name)
-        } else {
+        if (!beach.features.includes(feature)) {
           const index = filteredBeaches.indexOf(beach)
           if (index > -1) {
             filteredBeaches.splice(index, 1)
