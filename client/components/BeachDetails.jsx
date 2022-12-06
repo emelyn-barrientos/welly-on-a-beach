@@ -30,7 +30,6 @@ function BeachDetails() {
   //  ]
 
   const beach = beaches.find((beach) => beach.id === Number(id))
-  console.log(beach)
 
   return (
     <Container maxWidth="lg">
