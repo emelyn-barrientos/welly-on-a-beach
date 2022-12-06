@@ -18,3 +18,9 @@ export function addReview(newReview) {
       return res.body
     })
 }
+
+export function getBeachFeatures(beachId) {
+  return request.get(rootUrl + `/features/${beachId}`).then((res) => {
+    return res.body
+  })
+}
