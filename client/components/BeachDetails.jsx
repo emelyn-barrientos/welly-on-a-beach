@@ -19,6 +19,7 @@ function BeachDetails() {
     <Container maxWidth="lg">
       <HomeButton />
 
+
       <Typography
         variant="h1"
         sx={{
@@ -67,6 +68,7 @@ function BeachDetails() {
           width={'90%vw'}
         />
       </a>
+      
       <BeachReviews />
     </Container>
   )
