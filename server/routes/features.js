@@ -4,12 +4,10 @@ const db = require('../db/beaches')
 
 const router = express.Router()
 
-router.get('/features', (req, res) => {
-  console.log(req)
-  const beachId = req.body.id
+router.get('/:id', (req, res) => {
+  const beachId = req.params.id
   db.getFeaturesByBeachId(beachId)
     .then((result) => {
-      console.log(result)
       res.json(result)
     })
     .catch((err) => {
