@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getBeachWindDataThunk } from '../actions'
+import { getBeachWindDataThunk, getBeachFeaturesThunk } from '../actions'
 import { getTime } from '../utils'
 import { Link } from 'react-router-dom'
 
@@ -14,10 +14,13 @@ import {
 import BeachWindWidget from './BeachWindWidget'
 
 function BeachCard(props) {
-  const { id, name, latitude, longitude, orientation } = props.beach
+  const { id, name, latitude, longitude, orientation, features } = props.beach
+  const weatherData = useSelector((store) => store.weather)
   const dispatch = useDispatch()
 
-  const weatherData = useSelector((store) => store.weather)
+  useEffect(() => {
+    dispatch(getBeachFeaturesThunk(id))
+  }, [])
 
   return (
     <div>
