@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 import { useParams } from 'react-router-dom'
 
-import { Typography, Box, Container } from '@mui/material'
+import { Typography, Box, Container, Stack, Chip } from '@mui/material'
 
 import HomeButton from './HomeButton'
 import BeachReviews from './BeachReviews'
@@ -22,21 +22,26 @@ function BeachDetails() {
       <Typography
         variant="h1"
         sx={{
-          marginBlock: 4,
+          marginBlock: 2,
           textAlign: 'center',
         }}
       >
         {beach.name}
       </Typography>
-      <Typography
-        variant="body1"
-        sx={{
-          marginBlock: 4,
-          textAlign: 'center',
-        }}
-      >
-        <strong>Wind speed: </strong>35 kmph
+      <Typography variant="h5" padding={2} align="center">
+        Beach features
       </Typography>
+      <Stack
+        direction="row"
+        spacing={1}
+        flexWrap="wrap"
+        mb={5}
+        sx={{ rowGap: 0.5 }}
+      >
+        {beach.features.map((feature) => {
+          return <Chip key={feature} label={feature} clickable={false} />
+        })}
+      </Stack>
       <Box>
         <Typography
           variant="body1"
