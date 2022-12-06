@@ -8,7 +8,10 @@ const reducer = (state = initialState, action) => {
     case GET_BEACHES:
       return payload
     case ADD_NEW_REVIEW:
-      return [...state, payload]
+      // eslint-disable-next-line no-case-declarations
+      const foundBeach = state.find((beach) => beach.id === payload.beaches_id)
+      foundBeach.reviews.push(payload)
+      return [...state]
     default:
       return state
   }
