@@ -8,6 +8,7 @@ import { Typography, Box, Container } from '@mui/material'
 import HomeButton from './HomeButton'
 import BeachReviews from './BeachReviews'
 
+
 function BeachDetails() {
   const { id } = useParams()
 
@@ -33,6 +34,7 @@ function BeachDetails() {
   return (
     <Container maxWidth="lg">
       <HomeButton />
+
       <Typography
         variant="h1"
         sx={{
@@ -52,6 +54,7 @@ function BeachDetails() {
         <strong>Wind speed: </strong>35 kmph
       </Typography>
       <Box>
+
         <Typography
           variant="body1"
           sx={{
@@ -60,6 +63,7 @@ function BeachDetails() {
         >
           {beach.description}
         </Typography>
+
       </Box>
       <Box
         component="img"
@@ -68,8 +72,11 @@ function BeachDetails() {
         alt={beach.name}
         sx={{ display: 'flex', justifyContent: 'center', marginBlock: 2 }}
       />
+      
+      <a href={beach.location} target="_blank"><img src={`/images/location${id}.jpg`} alt={beach.name} width={'90%vw'} /></a>
       <BeachReviews />
     </Container>
+
   )
 }
 
