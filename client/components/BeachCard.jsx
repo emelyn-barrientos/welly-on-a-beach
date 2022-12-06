@@ -13,19 +13,11 @@ import {
 } from '@mui/material'
 
 function BeachCard(props) {
-  const { id, name, latitude, longitude } = props.beach
+  const { id, name, latitude, longitude, features } = props.beach
   const dispatch = useDispatch()
 
-  const windData = useSelector((store) => store.windData)
-
   useEffect(() => {
-    const time = getTime()
-    dispatch(getBeachWindDataThunk(latitude, longitude, time, id))
-  }, [])
-
-  useEffect(() => {
-    const beachId = props.beach.id
-    dispatch(getBeachFeaturesThunk(beachId))
+    dispatch(getBeachFeaturesThunk(id))
   }, [])
 
   return (
@@ -47,13 +39,6 @@ function BeachCard(props) {
               }}
             >
               {name}
-            </Typography>
-            <Typography variant="body1">
-              Wind speed: {windData && windData[id] && windData[id].windSpeed}
-            </Typography>
-            <Typography variant="body1">
-              Wind direction:{' '}
-              {windData && windData[id] && windData[id].windDirection}
             </Typography>
           </CardContent>
         </CardActionArea>
