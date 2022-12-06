@@ -13,7 +13,7 @@ import {
 } from '@mui/material'
 
 function BeachCard(props) {
-  const { id, name, latitude, longitude, features } = props.beach
+  const { id, name, features } = props.beach
   const dispatch = useDispatch()
 
   useEffect(() => {
