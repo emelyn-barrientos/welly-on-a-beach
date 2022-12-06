@@ -9,10 +9,10 @@ function getBeachById(id, db = connection) {
 }
 
 function getFeaturesByBeachId(beachId, db = connection) {
-  return db('beaches_features')
-    .join('beaches_features', 'features.id', 'beaches_features.feature_id')
+  return db('features')
+    .join('beaches_features', 'features.id', 'beaches_features.features_id')
     .where('beaches_id', beachId)
-    .select('features.name')
+    .select('feature')
 }
 
 module.exports = {
