@@ -13,9 +13,10 @@ function BeachDetails() {
 
   const beaches = useSelector((store) => store.beaches)
 
-  const beach = beaches.find((beach) => beach.id === Number(id))
+  const beach = beaches?.find((beach) => beach.id === Number(id))
 
   return (
+
     <Container maxWidth="lg">
       <HomeButton />
 
@@ -27,7 +28,7 @@ function BeachDetails() {
           textAlign: 'center',
         }}
       >
-        {beach.name}
+        {beach?.name}
       </Typography>
       <Typography variant="h5" padding={2} align="center">
         Beach features
@@ -39,7 +40,7 @@ function BeachDetails() {
         mb={5}
         sx={{ rowGap: 0.5 }}
       >
-        {beach.features.map((feature) => {
+        {beach && beach?.features?.map((feature) => {
           return <Chip key={feature} label={feature} clickable={false} />
         })}
       </Stack>
@@ -50,25 +51,25 @@ function BeachDetails() {
             marginBlock: 1,
           }}
         >
-          {beach.description}
+          {beach?.description}
         </Typography>
       </Box>
       <Box
         component="img"
         src={`/images/${id}.jpg`}
         maxWidth="md"
-        alt={beach.name}
+        alt={beach?.name}
         sx={{ display: 'flex', justifyContent: 'center', marginBlock: 2 }}
       />
 
-      <a href={beach.location} target="_blank" rel="noreferrer">
+      <a href={beach?.location} target="_blank" rel="noreferrer">
         <img
           src={`/images/location${id}.jpg`}
-          alt={beach.name}
+          alt={beach?.name}
           width={'90%vw'}
         />
       </a>
-      
+
       <BeachReviews />
     </Container>
   )
