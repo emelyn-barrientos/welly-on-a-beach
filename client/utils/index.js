@@ -4,6 +4,34 @@ export function getTime() {
   return timeString
 }
 
+export function getTimeForUV() {
+  const date = new Date()
+  let day = date.getUTCDate()
+  let month = date.getUTCMonth() + 1
+  const year = date.getUTCFullYear()
+  let hour = date.getUTCHours()
+
+  if (day < 10) {
+    day = '0' + day
+  }
+  if (month < 10) {
+    month = '0' + month
+  }
+  if (hour < 10) {
+    hour = '0' + hour
+  }
+
+  const timeString = `${year}-${month}-${day}T${hour}:00:00.000Z`
+
+  return timeString
+}
+
+export function getLocalWellyDate(date) {
+  const otherDate = new Date(date)
+  const wellyDateString = otherDate.toDateString()
+  return wellyDateString
+}
+
 export function getPointsFromAngle(angle, vector_length, start_position) {
   //angle given is direction from which wind is blowing (360 is northerly)
   const radians = degreesToRadians(angle - 180)

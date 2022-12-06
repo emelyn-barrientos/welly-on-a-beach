@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom'
 import { Typography, Box, Container } from '@mui/material'
 
 import HomeButton from './HomeButton'
+import BeachReviews from './BeachReviews'
 
 function BeachDetails() {
   const { id } = useParams()
@@ -67,6 +68,7 @@ function BeachDetails() {
         alt={beach.name}
         sx={{ display: 'flex', justifyContent: 'center', marginBlock: 2 }}
       />
+      <BeachReviews />
     </Container>
   )
 }
