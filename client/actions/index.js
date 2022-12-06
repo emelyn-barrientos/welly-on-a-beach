@@ -1,7 +1,7 @@
 import {
   getWellyWeatherData,
   getBeachWindData,
-  getUVData,
+  getUVDataNIWA,
 } from '../apis/weather'
 import { getAllBeaches } from '../apis/index.js'
 
@@ -76,9 +76,9 @@ export function getBeachWindDataThunk(latitude, longitude, time, beach_id) {
   }
 }
 
-export function getWellyUVDataThunk() {
+export function getWellyUVDataThunk(time) {
   return (dispatch) => {
-    getUVData()
+    getUVDataNIWA(time)
       .then((uv) => {
         dispatch(getWellyUVDataAction(uv))
       })
