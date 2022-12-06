@@ -43,8 +43,9 @@ router.post('/', (req, res) => {
   reviewsDb
     .addReview(newReview)
     .then((idArr) => {
+      console.log('in the post route!: ', idArr)
       const id = idArr[0]
-      return db.getReviewById(id)
+      return reviewsDb.getReviewById(id)
     })
     .then((reviewFromDb) => {
       res.json(reviewFromDb)
