@@ -7,6 +7,8 @@ import TempWidget from './TempWidget'
 import UVWidget from './UVWidget'
 import WeatherIconWidget from './WeatherIconWidget'
 
+import Box from '@mui/material/Box'
+
 function WellyWeatherData() {
   const dispatch = useDispatch()
 
@@ -20,32 +22,36 @@ function WellyWeatherData() {
   }, [])
 
   return (
-    <div className="welly-weather-widget">
-      {weatherData && weatherData.metData && (
-        <WeatherIconWidget
-          rainRate={weatherData.metData.rainRate}
-          cloudCover={weatherData.metData.cloudCover}
-          size="100"
-        />
-      )}
-      {weatherData && weatherData.metData && (
-        <TempWidget temp={weatherData.metData.airTemp} size="100" />
-      )}
-      {weatherData && weatherData.metData && (
-        <WindWidget
-          windDirection={
-            weatherData &&
-            weatherData.metData &&
-            weatherData.metData.windDirection
-          }
-          windSpeed={
-            weatherData && weatherData.metData && weatherData.metData.windSpeed
-          }
-          size="100"
-        />
-      )}
-      {weatherData && <UVWidget uv={weatherData.uv} size="100" />}
-    </div>
+    <>
+      <div className="welly-weather-widget">
+        {weatherData && weatherData.metData && (
+          <WeatherIconWidget
+            rainRate={weatherData.metData.rainRate}
+            cloudCover={weatherData.metData.cloudCover}
+            size="100"
+          />
+        )}
+        {weatherData && weatherData.metData && (
+          <TempWidget temp={weatherData.metData.airTemp} size="100" />
+        )}
+        {weatherData && weatherData.metData && (
+          <WindWidget
+            windDirection={
+              weatherData &&
+              weatherData.metData &&
+              weatherData.metData.windDirection
+            }
+            windSpeed={
+              weatherData &&
+              weatherData.metData &&
+              weatherData.metData.windSpeed
+            }
+            size="100"
+          />
+        )}
+        {weatherData && <UVWidget uv={weatherData.uv} size="100" />}
+      </div>
+    </>
   )
 }
 
