@@ -17,12 +17,7 @@ function BeachCard(props) {
   const { id, name, latitude, longitude, orientation } = props.beach
   const dispatch = useDispatch()
 
-  const windData = useSelector((store) => store.windData)
-
-  useEffect(() => {
-    const time = getTime()
-    dispatch(getBeachWindDataThunk(latitude, longitude, time, id))
-  }, [])
+  const weatherData = useSelector((store) => store.weather)
 
   return (
     <div>
@@ -44,19 +39,14 @@ function BeachCard(props) {
             >
               {name}
             </Typography>
-            <Typography variant="body1">
-              Wind speed: {windData && windData[id] && windData[id].windSpeed}
-            </Typography>
-            <Typography variant="body1">
-              Wind direction:{' '}
-              {windData && windData[id] && (
-                <BeachWindWidget
-                  orientation={orientation}
-                  windDirection={windData[id].windDirection}
-                  size="100"
-                />
-              )}
-            </Typography>
+            Wind direction{' '}
+            {weatherData && weatherData.metData && (
+              <BeachWindWidget
+                orientation={orientation}
+                windDirection={weatherData.metData.windDirection}
+                size="100"
+              />
+            )}
           </CardContent>
         </CardActionArea>
       </Card>
