@@ -15,7 +15,7 @@ function ChipFilter({ features, selected, updateSelected }) {
 
   return (
     <>
-      <Stack direction="row" spacing={1}>
+      <Stack direction="row" spacing={1} flexWrap="wrap">
         {features &&
           features.map((feature) => {
             return (
