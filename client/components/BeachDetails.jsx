@@ -8,6 +8,7 @@ import { Container } from '@mui/system'
 
 import HomeButton from './HomeButton'
 
+
 function BeachDetails() {
   const { id } = useParams()
 
@@ -29,12 +30,14 @@ function BeachDetails() {
   //  ]
 
   const beach = beaches.find((beach) => beach.id === Number(id))
+  console.log(beach)
 
   return (
     
     <div>
       <Container maxWidth="lg">
       <HomeButton />
+      
         <Typography
           variant="h3"
           sx={{
@@ -60,6 +63,8 @@ function BeachDetails() {
           <strong>Wind data: </strong>35 kmph
         </Typography>
         <img src={`/images/${id}.jpg`} alt={beach.name} width={'90%vw'} />
+        <a href={beach.location} target="_blank"><img src={`/images/location${id}.jpg`} alt={beach.name} width={'90%vw'} /></a>
+        {/* <a href={beach.location} target="_blank">Go to map</a> */}
       </Container>
     </div>
   )
