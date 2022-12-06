@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
+import { getLocalWellyDate } from '../utils'
+
 // import { FormControl, InputLabel, Input, FormHelperText } from '@mui/material'
 import { TextField, Button } from '@mui/material'
 
@@ -15,6 +17,7 @@ function AddReview() {
   const dispatch = useDispatch()
 
   const handleChange = (evt) => {
+    console.log('target.value: ', evt.target.value)
     setNewReview({
       ...newReview,
       [evt.target.name]: evt.target.value,
@@ -23,11 +26,13 @@ function AddReview() {
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
-    dispatch(addNewReview(newReview))
-    setNewReview({
-      review: '',
-      date_posted: '',
-    })
+    newReview.date_posted = Date.now()
+    console.log('newReview: ', newReview)
+    //   dispatch(addNewReview(newReview))
+    //   setNewReview({
+    //     review: '',
+    //     date_posted: '',
+    //   })
   }
 
   return (
@@ -39,6 +44,8 @@ function AddReview() {
           color="secondary"
           fullWidth
           multiline
+          name="review"
+          value={newReview.review}
           onChange={handleChange}
         />
         <Button type="submit" variant="contained">
