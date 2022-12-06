@@ -2,19 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
 // import { FormControl, InputLabel, Input, FormHelperText } from '@mui/material'
-import { makeStyles, TextField, Button } from '@mui/material'
-
-const useStyles = makeStyles({
-  field: {
-    marginTop: 20,
-    marginBottom: 20,
-    display: 'block',
-  },
-})
+import { TextField, Button } from '@mui/material'
 
 function AddReview() {
-  const classes = useStyles()
-
   const [newReview, setNewReview] = useState({
     review: '',
     date_posted: '',
@@ -44,7 +34,6 @@ function AddReview() {
     <div>
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
         <TextField
-          className={classes.field}
           label="Add Beach Review"
           variant="outlined"
           color="secondary"
