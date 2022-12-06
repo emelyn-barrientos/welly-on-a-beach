@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import BeachCard from './BeachCard'
+import About from './About'
 
 import Grid from '@mui/material/Unstable_Grid2'
 
@@ -19,6 +20,7 @@ function BeachList() {
 
   return (
     <div>
+      <About />
       <Typography
         sx={{
           marginBlock: 4,
