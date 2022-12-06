@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
-import { Typography, Box, Container, Stack, Chip } from '@mui/material'
+import { Typography, Box, Tab, Container, Stack, Chip } from '@mui/material'
 
 import HomeButton from './HomeButton'
 import BeachReviews from './BeachReviews'
@@ -21,6 +21,7 @@ function BeachDetails() {
 
       <Typography
         variant="h1"
+        align="center"
         sx={{
           marginBlock: 2,
           textAlign: 'center',
@@ -28,9 +29,11 @@ function BeachDetails() {
       >
         {beach.name}
       </Typography>
-      <Typography variant="h5" padding={2} align="center">
+
+      <Typography variant="h5" padding={2} textAlign="center">
         Beach features
       </Typography>
+
       <Stack
         direction="row"
         spacing={1}
@@ -42,9 +45,11 @@ function BeachDetails() {
           return <Chip key={feature} label={feature} clickable={false} />
         })}
       </Stack>
+
       <Box>
         <Typography
           variant="body1"
+          textAlign="center"
           sx={{
             marginBlock: 1,
           }}
@@ -52,6 +57,7 @@ function BeachDetails() {
           {beach.description}
         </Typography>
       </Box>
+
       <Box
         component="img"
         src={`/images/${id}.jpg`}
@@ -65,7 +71,7 @@ function BeachDetails() {
           component="img"
           src={`/images/location${id}.jpg`}
           alt={`Link to ${beach.name} map.`}
-          sx={{ display: 'flex', justifyContent: 'center', marginBlock: 2 }}
+          sx={{ display: 'flex', align: 'center', marginBlock: 2 }}
         ></Box>
       </a>
 
