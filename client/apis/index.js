@@ -8,8 +8,8 @@ export function getAllBeaches() {
   })
 }
 
-export function getBeachFeatures() {
-  return request.get(rootUrl + '/features').then((res) => {
+export function getBeachFeatures(beachId) {
+  return request.get(rootUrl + `/features/${beachId}`).then((res) => {
     return res.body
   })
 }
