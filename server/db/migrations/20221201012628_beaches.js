@@ -1,4 +1,3 @@
-
 exports.up = function (knex) {
   return knex.schema.createTable('beaches', (table) => {
     table.increments('id').primary()
@@ -8,7 +7,6 @@ exports.up = function (knex) {
     table.string('latitude')
     table.string('longitude')
     table.text('location')
-
   })
 }
 

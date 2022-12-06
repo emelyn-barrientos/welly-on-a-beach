@@ -36,6 +36,18 @@ const theme = extendTheme({
       fontSize: '1.5rem',
       fontWeight: 700,
     },
+    h4: {
+      fontSize: '1.2rem',
+      fontWeight: 700,
+    },
+    h5: {
+      fontSize: '1.2rem',
+      fontWeight: 600,
+    },
+    h6: {
+      fontSize: '1.2rem',
+      fontWeight: 500,
+    },
     subtitle1: {
       fontSize: '1rem',
       fontWeight: 500,

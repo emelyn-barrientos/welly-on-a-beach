@@ -7,6 +7,7 @@ import { Container } from '@mui/system'
 import { Typography } from '@mui/material'
 
 import ReviewCard from './ReviewCard'
+import AddReview from './AddReview'
 
 function BeachReviews() {
   const { id } = useParams()
@@ -32,6 +33,7 @@ function BeachReviews() {
           reviews.map((review) => {
             return <ReviewCard key={review.id} review={review} />
           })}
+        <AddReview />
       </Container>
     </div>
   )
