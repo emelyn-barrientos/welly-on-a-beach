@@ -21,7 +21,6 @@ function App() {
         <Container maxWidth="lg">
           <Header />
           <WellyWeatherData />
-          {/* <About /> */}
           <Routes>
             <Route path="/" element={<BeachList />} />
             <Route path="/beach/:id" element={<BeachDetails />} />
