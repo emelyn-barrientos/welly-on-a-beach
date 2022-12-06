@@ -6,6 +6,8 @@ import BeachDetails from './BeachDetails'
 import WellyWeatherData from './WellyWeatherData'
 import Header from './Header'
 import theme from '../styles/themes'
+import About from './About'
+
 
 import CssBaseline from '@mui/material/CssBaseline'
 import { Experimental_CssVarsProvider as CSSVarsProvider } from '@mui/material/styles'
@@ -19,9 +21,11 @@ function App() {
         <Container maxWidth="lg">
           <Header />
           <WellyWeatherData />
+          <About />
           <Routes>
             <Route path="/" element={<BeachList />} />
             <Route path="/beach/:id" element={<BeachDetails />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </Container>
       </CSSVarsProvider>

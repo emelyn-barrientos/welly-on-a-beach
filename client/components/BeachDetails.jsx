@@ -35,6 +35,7 @@ function BeachDetails() {
     <Container maxWidth="lg">
       <HomeButton />
 
+
       <Typography
         variant="h1"
         sx={{
@@ -72,7 +73,7 @@ function BeachDetails() {
         alt={beach.name}
         sx={{ display: 'flex', justifyContent: 'center', marginBlock: 2 }}
       />
-      
+
       <a href={beach.location} target="_blank"><img src={`/images/location${id}.jpg`} alt={beach.name} width={'90%vw'} /></a>
       <BeachReviews />
     </Container>
