@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import BeachCard from './BeachCard'
@@ -7,15 +7,23 @@ import Grid from '@mui/material/Unstable_Grid2'
 
 import { getAllBeachesThunk } from '../actions'
 import { Typography } from '@mui/material'
+import ChipFilter from './ChipFilter'
 
 function BeachList() {
   const beaches = useSelector((store) => store.beaches)
+  const [selectedChips, updateSelectedChips] = useState([])
 
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(getAllBeachesThunk())
   }, [])
+
+  useEffect(() => {
+    // Filter by selectedChips...
+    // Need database stuff before testing thiss
+    // const filteredBeaches = beaches.filter()
+  }, [beaches])
 
   return (
     <div>
@@ -28,6 +36,11 @@ function BeachList() {
       >
         Wellington beaches
       </Typography>
+      <ChipFilter
+        features={['showers', 'playground']}
+        updateSelected={updateSelectedChips}
+        selected={selectedChips}
+      />
       <Grid
         container
         rowSpacing={{ xs: 3, sm: 5, md: 7 }}
