@@ -1,40 +1,43 @@
 import React from 'react'
 import { getUVLevel } from '../utils'
 
+import { Card } from '@mui/material'
+
 function UVWidget({ uv, size }) {
-  const { level, colour, width } = getUVLevel(uv, size)
-  console.log(level, colour, width)
+  const { colour, width } = getUVLevel(uv, size)
   const maxWidth = size * 0.9
   return (
-    <div
-      className="widget-container"
-      style={{ width: `${size}px`, height: `${size}px` }}
-    >
+    <Card>
       <div
-        className="uv-text"
-        style={{ fontSize: `${size * 0.2}px`, color: `${colour}` }}
-      >
-        {uv}
-      </div>
-      <div
-        className="uv-bar-container"
-        style={{
-          width: `${maxWidth}px`,
-          height: `${size * 0.2}px`,
-          borderRadius: `${size * 0.1}px`,
-        }}
+        className="widget-container"
+        style={{ width: `${size}px`, height: `${size}px` }}
       >
         <div
-          className="uv-bar-fill"
+          className="uv-text"
+          style={{ fontSize: `${size * 0.3}px`, color: `${colour}` }}
+        >
+          {uv}
+        </div>
+        <div
+          className="uv-bar-container"
           style={{
-            width: `${width}px`,
-            backgroundColor: `${colour}`,
-            height: `${size * 0.18}px`,
-            borderRadius: `${size * 0.08}px`,
+            width: `${maxWidth}px`,
+            height: `${size * 0.2}px`,
+            borderRadius: `${size * 0.1}px`,
           }}
-        ></div>
+        >
+          <div
+            className="uv-bar-fill"
+            style={{
+              width: `${width}px`,
+              backgroundColor: `${colour}`,
+              height: `${size * 0.16}px`,
+              borderRadius: `${size * 0.09}px`,
+            }}
+          ></div>
+        </div>
       </div>
-    </div>
+    </Card>
   )
 }
 

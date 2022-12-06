@@ -1,28 +1,40 @@
 export function getTime() {
   const date = new Date()
-  const year = date.getFullYear().toString()
-  let month = (date.getMonth() + 1).toString()
-  let day = date.getDate().toString()
-  if (day.length < 2) {
-    day = '0' + day
-  }
-  if (month.length < 2) {
-    month = '0' + month
-  }
-  let hour = date.getHours().toString()
-  if (hour.length < 2) {
-    hour = '0' + hour
-  }
-  let minutes = date.getMinutes().toString()
-  if (minutes.length < 2) {
-    minutes = '0' + minutes
-  }
-  const timeString = `${year}-${month}-${day}T${hour}%3A${minutes}%3A00Z`
+  const timeString = date.toISOString()
   return timeString
 }
 
+export function getTimeForUV() {
+  const date = new Date()
+  let day = date.getUTCDate()
+  let month = date.getUTCMonth() + 1
+  const year = date.getUTCFullYear()
+  let hour = date.getUTCHours()
+
+  if (day < 10) {
+    day = '0' + day
+  }
+  if (month < 10) {
+    month = '0' + month
+  }
+  if (hour < 10) {
+    hour = '0' + hour
+  }
+
+  const timeString = `${year}-${month}-${day}T${hour}:00:00.000Z`
+
+  return timeString
+}
+
+export function getLocalWellyDate(date) {
+  const otherDate = new Date(date)
+  const wellyDateString = otherDate.toDateString()
+  return wellyDateString
+}
+
 export function getPointsFromAngle(angle, vector_length, start_position) {
-  const radians = degreesToRadians(angle)
+  //angle given is direction from which wind is blowing (360 is northerly)
+  const radians = degreesToRadians(angle - 180)
   const h = vector_length
   const x1 = start_position
   const y1 = start_position
@@ -61,4 +73,18 @@ export function getUVLevel(uv, size) {
   }
   width = (uv / maxLevel) * maxWidth
   return { level, colour, width }
+}
+
+export function chooseIcon(rainRate, cloudCover) {
+  let icon = ''
+  if (rainRate > 0) {
+    icon = 'rainy'
+  } else if (cloudCover > 50) {
+    icon = 'cloudy'
+  } else if (cloudCover > 25) {
+    icon = 'cloudySun'
+  } else {
+    icon = 'sun'
+  }
+  return icon
 }

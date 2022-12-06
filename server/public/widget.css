@@ -17,16 +17,15 @@
   justify-content: center;
   align-content: center;
   margin: auto 0;
-  border: 1px solid #ccc;
-  border-radius: 10%;
-  font-family: 'Open Sans'
+  border: none;
+  font-family: 'Open Sans';
+  color: #273469
 }
 
 .uv-text {
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  font-weight: bold;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .temp-text {
@@ -43,6 +42,24 @@
 .temp-container {
   display: flex;
   flex-direction: row;
-  margin-top: 20%;
+  padding-top: 20%;
   justify-content: center;
+}
+
+.welly-weather-widget {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 5px;
+}
+
+.welly-weather-widget-header {
+  width: 100%;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-bottom: 5px;
+  display: flex;
+  font-family: 'Open Sans';
 }
