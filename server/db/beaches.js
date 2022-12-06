@@ -9,16 +9,14 @@ function getBeachById(id, db = connection) {
 }
 
 function getFeaturesByBeachId(beachId, db = connection) {
-  return db('beaches_features').select('').where('beaches_id', beachId)
-}
-
-function getFeatureNameById(featId, db = connection) {
-  return db('features').select('').where('id', featId)
+  return db('beaches_features')
+    .join('beaches_features', 'features.id', 'beaches_features.feature_id')
+    .where('beaches_id', beachId)
+    .select('features.name')
 }
 
 module.exports = {
   getAllBeaches,
   getBeachById,
   getFeaturesByBeachId,
-  getFeatureNameById,
 }

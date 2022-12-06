@@ -7,3 +7,9 @@ export function getAllBeaches() {
     return res.body
   })
 }
+
+export function getBeachFeatures() {
+  return request.get(rootUrl + '/features').then((res) => {
+    return res.body
+  })
+}

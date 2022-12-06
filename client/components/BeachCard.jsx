@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getBeachWindDataThunk } from '../actions'
+import { getBeachWindDataThunk, getBeachFeaturesThunk } from '../actions'
 import { getTime } from '../utils'
 import { Link } from 'react-router-dom'
 
@@ -21,6 +21,11 @@ function BeachCard(props) {
   useEffect(() => {
     const time = getTime()
     dispatch(getBeachWindDataThunk(latitude, longitude, time, id))
+  }, [])
+
+  useEffect(() => {
+    const beachId = props.beach.id
+    dispatch(getBeachFeaturesThunk(beachId))
   }, [])
 
   return (
