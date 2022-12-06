@@ -37,4 +37,22 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {
+  const newReview = req.body
+  // console.log('newReview req.body: ', req.body)
+  reviewsDb
+    .addReview(newReview)
+    .then((idArr) => {
+      const id = idArr[0]
+      return reviewsDb.getReviewById(id)
+    })
+    .then((reviewFromDb) => {
+      res.json(reviewFromDb)
+    })
+    .catch((err) => {
+      console.log(err)
+      res.status(500).json({ message: 'Something went wrong' })
+    })
+})
+
 module.exports = router
