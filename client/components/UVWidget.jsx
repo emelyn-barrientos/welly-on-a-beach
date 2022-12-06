@@ -4,7 +4,7 @@ import { getUVLevel } from '../utils'
 import { Card } from '@mui/material'
 
 function UVWidget({ uv, size }) {
-  const { level, colour, width } = getUVLevel(uv, size)
+  const { colour, width } = getUVLevel(uv, size)
   const maxWidth = size * 0.9
   return (
     <Card>
@@ -31,8 +31,8 @@ function UVWidget({ uv, size }) {
             style={{
               width: `${width}px`,
               backgroundColor: `${colour}`,
-              height: `${size * 0.18}px`,
-              borderRadius: `${size * 0.08}px`,
+              height: `${size * 0.16}px`,
+              borderRadius: `${size * 0.09}px`,
             }}
           ></div>
         </div>
