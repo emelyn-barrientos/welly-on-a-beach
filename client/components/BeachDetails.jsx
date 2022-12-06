@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 import { Typography, Box, Container, Stack, Chip } from '@mui/material'
 
@@ -18,7 +18,6 @@ function BeachDetails() {
   return (
     <Container maxWidth="lg">
       <HomeButton />
-
 
       <Typography
         variant="h1"
@@ -62,13 +61,14 @@ function BeachDetails() {
       />
 
       <a href={beach.location} target="_blank" rel="noreferrer">
-        <img
+        <Box
+          component="img"
           src={`/images/location${id}.jpg`}
-          alt={beach.name}
-          width={'90%vw'}
-        />
+          alt={`Link to ${beach.name} map.`}
+          sx={{ display: 'flex', justifyContent: 'center', marginBlock: 2 }}
+        ></Box>
       </a>
-      
+
       <BeachReviews />
     </Container>
   )
