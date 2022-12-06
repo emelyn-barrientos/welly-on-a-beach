@@ -3,12 +3,14 @@ import {
   getBeachWindData,
   getUVDataNIWA,
 } from '../apis/weather'
-import { getAllBeaches, getBeachFeatures } from '../apis/index.js'
+
+import { addReview, getAllBeaches, getBeachFeatures } from '../apis/index'
 
 export const GET_BEACHES = 'GET_BEACHES'
 export const GET_WELLY_WEATHER = 'GET_WELLY_WEATHER'
 export const GET_BEACH_WIND = 'GET_BEACH_WIND'
 export const GET_WELLY_UV = 'GET_WELLY_UV'
+export const ADD_NEW_REVIEW = 'ADD_NEW_REVIEW'
 export const GET_BEACH_FEATURES = 'GET_BEACH_FEATURES'
 
 export function getAllBeachesAction(beaches) {
@@ -46,7 +48,26 @@ export function getWellyUVDataAction(uv) {
   }
 }
 
+export function addNewReviewAction(newReview) {
+  return {
+    type: ADD_NEW_REVIEW,
+    payload: newReview,
+  }
+}
+
 //THUNKS
+
+export function addNewReviewThunk(newReview) {
+  return (dispatch) => {
+    addReview(newReview)
+      .then((databaseReview) => {
+        dispatch(addNewReviewAction(databaseReview))
+      })
+      .catch((err) => {
+        console.log(err.message)
+      })
+  }
+}
 
 export function getAllBeachesThunk() {
   return (dispatch) => {
