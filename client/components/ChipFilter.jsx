@@ -25,15 +25,13 @@ function ChipFilter({ features, selected, updateSelected }) {
         {features &&
           features.map((feature) => {
             return (
-              <>
-                <Chip
-                  key={feature}
-                  label={feature}
-                  clickable={true}
-                  onClick={(e) => handleClick(e, feature)}
-                  variant={selected.includes(feature) ? 'filled' : 'outlined'}
-                />
-              </>
+              <Chip
+                key={feature}
+                label={feature}
+                clickable={true}
+                onClick={(e) => handleClick(e, feature)}
+                variant={selected.includes(feature) ? 'filled' : 'outlined'}
+              />
             )
           })}
       </Stack>
