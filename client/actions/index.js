@@ -18,10 +18,10 @@ export function getAllBeachesAction(beaches) {
   }
 }
 
-export function getBeachFeaturesAction(features) {
+export function getBeachFeaturesAction(beach_id, features) {
   return {
     type: GET_BEACH_FEATURES,
-    payload: features,
+    payload: { id: beach_id, features: features },
   }
 }
 
@@ -86,9 +86,10 @@ export function getBeachWindDataThunk(latitude, longitude, time, beach_id) {
 
 export function getBeachFeaturesThunk(beachId) {
   return (dispatch) => {
-    getBeachFeatures()
-      .then(() => {
-        dispatch(getBeachFeaturesAction(beachId))
+    getBeachFeatures(beachId)
+      .then((features) => {
+        const formatedFeatures = features.map((feature) => feature.feature)
+        dispatch(getBeachFeaturesAction(beachId, formatedFeatures))
       })
       .catch((err) => {
         console.log(err.message)
