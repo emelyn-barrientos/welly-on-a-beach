@@ -42,7 +42,6 @@ function BeachCard(props) {
             >
               {name}
             </Typography>
-            Wind direction{' '}
             {weatherData && weatherData.metData && (
               <BeachWindWidget
                 orientation={orientation}

@@ -1,4 +1,5 @@
 import React from 'react'
+import Typography from '@mui/material/Typography'
 
 function BeachWindWidget({ orientation, windDirection, size }) {
   const angleRelativeToBeach = windDirection - orientation - 180
@@ -8,9 +9,16 @@ function BeachWindWidget({ orientation, windDirection, size }) {
       className="widget-container"
       style={{
         width: `${size}px`,
-        height: `${size * 2}px`,
+        height: `fit-contents`,
       }}
     >
+      <Typography
+        variant="body2"
+        color="initial"
+        style={{ textAlign: 'center' }}
+      >
+        Wind Direction
+      </Typography>
       <div className="wind-arrow">
         <svg
           width="24"
