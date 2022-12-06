@@ -72,3 +72,18 @@ export function getUVData() {
       console.log('Err message: ' + err)
     })
 }
+
+export function getUVDataNIWA(time) {
+  const url = `https://api.niwa.co.nz/uv/data?lat=-41.29&long=174.78`
+  return request
+    .get(url)
+    .set('x-apikey', process.env.UV_KEY)
+    .then((res) => {
+      const uvArr = res.body.products[0].values
+      const uv = uvArr.find((obj) => obj.time == time)
+      return Math.round(uv.value)
+    })
+    .catch((err) => {
+      console.log('Err message: ' + err)
+    })
+}
