@@ -64,3 +64,12 @@
   display: flex;
   font-family: 'Open Sans';
 }
+
+.wind-arrow {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.shore-svg {
+  text-align: center;
+}
