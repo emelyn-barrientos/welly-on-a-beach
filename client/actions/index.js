@@ -53,8 +53,8 @@ export function addNewReviewThunk(newReview) {
   console.log('addNewReviewThunk(newReview): ', newReview)
   return (dispatch) => {
     addReview(newReview)
-      .then(() => {
-        dispatch(addNewReviewAction(newReview))
+      .then((databaseReview) => {
+        dispatch(addNewReviewAction(databaseReview))
       })
       .catch((err) => {
         console.log(err.message)
