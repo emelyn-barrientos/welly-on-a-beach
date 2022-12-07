@@ -34,13 +34,13 @@ export default function AboutPage() {
             marginBlock: 1,
           }}
         >
-          This app is designed to help the user figurout which Wellington is
-          best for them on a given day. Because we all know Wellington as a
-          windy and tempermental city, it is important that our app helps you
-          see which beach is best. The app will provide the user global
-          Wellington weather statistics and more specific statistics per beach.
-          The app can also filter beaches based on what they can provide such as
-          whether a beach is good to see sunset or other features.{' '}
+          We all know that you can't beat Wellington on a good day. This app is
+          designed to help the user figure out which Wellington beach is the
+          best one to go to when the sun is shining...even when it's windy!. The
+          app provides the user with a global Wellington weather statistics
+          using MetService data and more specific statistics per beach. The app
+          can also filter beaches based on what they can provide such as whether
+          a beach is good to see sunset or other features.{' '}
         </Typography>
 
         <Typography
@@ -59,9 +59,13 @@ export default function AboutPage() {
             marginBlock: 1,
           }}
         >
-          Welly on a Beach was created by five aspiring future junior
-          developers. We have all been working hard at dev academy and we are
-          excited to present this app as our final project.
+          <strong>Welly on a Beach</strong> was created by five aspiring
+          developers as their final project for the Hihi 2022 cohort at{' '}
+          <a href="https://devacademy.co.nz/" target="_blank" rel="noreferrer">
+            Dev Academy Aotearoa
+          </a>
+          . We've worked diligently on this project and we're excited to share
+          the WOAB app to our friends and whānau to show how much we've learned!
         </Typography>
 
         <Typography
