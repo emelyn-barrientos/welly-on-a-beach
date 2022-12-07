@@ -19,7 +19,6 @@
   margin: auto 0;
   border: none;
   font-family: 'Open Sans';
-  color: #273469
 }
 
 .uv-text {
@@ -42,17 +41,23 @@
 .temp-container {
   display: flex;
   flex-direction: row;
-  padding-top: 20%;
   justify-content: center;
 }
 
-.welly-weather-widget {
+.welly-weather-widgets {
   width: fit-content;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  column-gap: 5px;
   margin: auto;
+  column-gap: 3px;
+  padding: 15px;
+  border-style: none;
+}
+
+.welly-weather-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .welly-weather-widget-header {
