@@ -43,6 +43,31 @@ export function getPointsFromAngle(angle, vector_length, start_position) {
   return { x1, y1, x2, y2 }
 }
 
+export function getPointsFromAngleForBeachWind(angle, vector_length) {
+  //angle given is direction from which wind is blowing (360 is northerly)
+  const radians = degreesToRadians(angle - 180)
+  const h = vector_length
+  let x1 = 50
+  let y1 = 50
+  let x2 = 50
+  let y2 = 50
+
+  if (angle < 270 && angle > 90) {
+    x1 = 50
+    y1 = 50
+    y2 = Math.cos(radians) * h + y1
+    x2 = -Math.sin(radians) * h + x1
+  } else if (angle > 270 || angle < 90) {
+    x2 = 50
+    y2 = 40
+    y1 = -Math.cos(radians) * h + y2
+    x1 = Math.sin(radians) * h + x2
+  }
+
+  console.log(angle, x1, y1, x2, y2)
+  return { x1, y1, x2, y2 }
+}
+
 function degreesToRadians(angle) {
   const pi = Math.PI
   const radians = (angle + 180) * (pi / 180)

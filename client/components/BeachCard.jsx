@@ -11,9 +11,11 @@ import {
   CardActionArea,
   Typography,
 } from '@mui/material'
+import BeachWindWidget from './BeachWindWidget'
 
 function BeachCard(props) {
-  const { id, name, features } = props.beach
+  const { id, name, latitude, longitude, orientation, features } = props.beach
+  const weatherData = useSelector((store) => store.weather)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -40,6 +42,13 @@ function BeachCard(props) {
             >
               {name}
             </Typography>
+            {weatherData && weatherData.metData && (
+              <BeachWindWidget
+                orientation={orientation}
+                windDirection={weatherData.metData.windDirection}
+                size="100"
+              />
+            )}
           </CardContent>
         </CardActionArea>
       </Card>
