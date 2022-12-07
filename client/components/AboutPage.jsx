@@ -86,7 +86,6 @@ export default function AboutPage() {
           }}
         >
           <List
-            dense="dense"
             sx={{
               display: 'flex',
               flexDirection: 'row',
