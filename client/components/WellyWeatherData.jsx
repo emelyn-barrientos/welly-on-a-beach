@@ -30,7 +30,7 @@ function WellyWeatherData() {
           margin: 'auto',
         }}
       >
-        <Typography variant="h4" color="initial" align="center" marginTop={1}>
+        <Typography variant="h4" color="primary" align="center" marginTop={1}>
           Current Welly Weather
         </Typography>
         <div className="welly-weather-widgets">
