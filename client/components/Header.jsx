@@ -1,17 +1,35 @@
 import React from 'react'
 
 import { WOABLogo } from './Logo'
+import { MobileWOABLogo } from './MobileLogo'
 import { Link } from 'react-router-dom'
 
 import { Container } from '@mui/material'
 
 function Header() {
   return (
-    <Container maxWidth="sm" sx={{ position: 'relative', marginBlock: 8 }}>
-      <Link to={'/'}>
-        <WOABLogo alt="Wellington on a beach" title="Wellington on a beach" />
-      </Link>
-    </Container>
+    <>
+      <Container
+        margin={2}
+        maxWidth="sm"
+        align="center"
+        sx={{ display: { xs: 'blox', md: 'none' } }}
+      >
+        <Link to={'/'}>
+          <MobileWOABLogo />
+        </Link>
+      </Container>
+      <Container
+        margin={2}
+        maxWidth="lg"
+        align="center"
+        sx={{ display: { xs: 'none', md: 'block' } }}
+      >
+        <Link to={'/'}>
+          <WOABLogo />
+        </Link>
+      </Container>
+    </>
   )
 }
 
