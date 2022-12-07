@@ -5,7 +5,9 @@ import { getTime, getTimeForUV } from '../utils'
 import WindWidget from './WindWidget'
 import TempWidget from './TempWidget'
 import UVWidget from './UVWidget'
+import WindSpeedWidget from './WindSpeedWidget'
 import WeatherIconWidget from './WeatherIconWidget'
+import { Typography, Card } from '@mui/material'
 
 function WellyWeatherData() {
   const dispatch = useDispatch()
@@ -19,47 +21,41 @@ function WellyWeatherData() {
     dispatch(getWellyUVDataThunk(uvTime))
   }, [])
 
-  // const weatherData = {
-  //   uv: 11,
-  //   metData: {
-  //     airTemp: 17,
-  //     cloudCover: 20,
-  //     windDirection: 330,
-  //     windSpeed: 15,
-  //     rainRate: 0,
-  //   },
-  // }
-
   return (
     <>
-      <div className="welly-weather-widget">
-        {weatherData && weatherData.metData && (
-          <WeatherIconWidget
-            rainRate={weatherData.metData.rainRate}
-            cloudCover={weatherData.metData.cloudCover}
-            size="100"
-          />
-        )}
-        {weatherData && weatherData.metData && (
-          <TempWidget temp={weatherData.metData.airTemp} size="100" />
-        )}
-        {weatherData && weatherData.metData && (
-          <WindWidget
-            windDirection={
-              weatherData &&
-              weatherData.metData &&
-              weatherData.metData.windDirection
-            }
-            windSpeed={
-              weatherData &&
-              weatherData.metData &&
-              weatherData.metData.windSpeed
-            }
-            size="100"
-          />
-        )}
-        {weatherData && <UVWidget uv={weatherData.uv} size="100" />}
-      </div>
+      <Card
+        sx={{
+          backgroundColor: 'rgba(26, 150, 240, 0.3)',
+          width: 'fit-content',
+          margin: 'auto',
+        }}
+      >
+        <Typography variant="h4" color="initial" align="center" marginTop={1}>
+          Current Welly Weather
+        </Typography>
+        <div className="welly-weather-widgets">
+          {weatherData && weatherData.metData && (
+            <TempWidget temp={weatherData.metData.airTemp} size="150" />
+          )}
+          {weatherData && weatherData.metData && (
+            <WeatherIconWidget
+              rainRate={weatherData.metData.rainRate}
+              cloudCover={weatherData.metData.cloudCover}
+              size="150"
+            />
+          )}
+          {weatherData && weatherData.metData && (
+            <WindWidget
+              windDirection={weatherData.metData.windDirection}
+              size="100"
+            />
+          )}
+          {weatherData && weatherData.metData && (
+            <WindSpeedWidget windSpeed={weatherData.metData.windSpeed} />
+          )}
+          {weatherData && <UVWidget uv={weatherData.uv} size="100" />}
+        </div>
+      </Card>
     </>
   )
 }

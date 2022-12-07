@@ -118,11 +118,22 @@ export function getWindDirectionString(windDirection) {
   let direction
   console.log(windDirection)
   //
-  if (windDirection < 180 && windDirection > 0) {
-    direction = 'Southerly Wind'
-  }
-  if (windDirection > 180) {
-    direction = 'Northerly Wind'
+  if (windDirection < 202.5 && windDirection > 157.5) {
+    direction = 'Southerly'
+  } else if (windDirection < 22.5 && windDirection > 337.5) {
+    direction = 'Northerly'
+  } else if (windDirection < 292.5 && windDirection > 247.5) {
+    direction = 'Westerly'
+  } else if (windDirection < 112.5 && windDirection > 67.5) {
+    direction = 'Easterly'
+  } else if (windDirection < 202.5 && windDirection > 247.5) {
+    direction = 'South-Westerly'
+  } else if (windDirection > 112.5 && windDirection < 157.5) {
+    direction = 'South-Easterly'
+  } else if (windDirection > 292.5 && windDirection < 337.5) {
+    direction = 'North-Westerly'
+  } else if (windDirection > 67.5 && windDirection < 22.5) {
+    direction = 'North-Easterly'
   }
   return direction
 }
