@@ -1,10 +1,11 @@
 import React from 'react'
-import { getPointsFromAngle } from '../utils'
+import { getPointsFromAngle, getWindDirectionString } from '../utils'
 
-import { Card } from '@mui/material'
+import { Card, Typography } from '@mui/material'
 
 function WindWidget({ windDirection, windSpeed, size }) {
   const vectorLength = size * 0.37
+  const windDirectionString = getWindDirectionString(windDirection)
   //Calculating offset of wind speed text to center in circle
   let offset = 0
   if (windSpeed.toString().length < 2) {
@@ -23,6 +24,9 @@ function WindWidget({ windDirection, windSpeed, size }) {
         className="widget-container"
         style={{ width: `${size}px`, height: `${size}px` }}
       >
+        <Typography variant="body2" color="initial">
+          {windDirectionString}
+        </Typography>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 100 100"

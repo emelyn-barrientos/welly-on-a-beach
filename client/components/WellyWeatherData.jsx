@@ -7,8 +7,6 @@ import TempWidget from './TempWidget'
 import UVWidget from './UVWidget'
 import WeatherIconWidget from './WeatherIconWidget'
 
-import Box from '@mui/material/Box'
-
 function WellyWeatherData() {
   const dispatch = useDispatch()
 
