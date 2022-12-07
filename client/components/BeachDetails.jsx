@@ -13,7 +13,7 @@ function BeachDetails() {
 
   const beaches = useSelector((store) => store.beaches)
 
-  const beach = beaches.find((beach) => beach.id === Number(id))
+  const beach = beaches?.find((beach) => beach.id === Number(id))
 
   return (
     <Container maxWidth="lg">
@@ -27,7 +27,7 @@ function BeachDetails() {
           textAlign: 'center',
         }}
       >
-        {beach.name}
+        {beach?.name}
       </Typography>
 
       <Typography variant="h5" padding={2} textAlign="center">
@@ -41,9 +41,10 @@ function BeachDetails() {
         mb={5}
         sx={{ rowGap: 0.5 }}
       >
-        {beach.features.map((feature) => {
-          return <Chip key={feature} label={feature} clickable={false} />
-        })}
+        {beach &&
+          beach?.features?.map((feature) => {
+            return <Chip key={feature} label={feature} clickable={false} />
+          })}
       </Stack>
 
       <Box>
@@ -54,7 +55,7 @@ function BeachDetails() {
             marginBlock: 1,
           }}
         >
-          {beach.description}
+          {beach?.description}
         </Typography>
       </Box>
 
