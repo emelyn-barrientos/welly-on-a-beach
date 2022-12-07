@@ -1,6 +1,6 @@
 import React from 'react'
-import MobileLogo from '../../server/public/svg/Mobile logo.svg'
+import MobileLogo from '../../server/public/svg/Logo 200px padded mobile.svg'
 
-export const MoibileWOABLogo = () => {
+export const MobileWOABLogo = () => {
   return <MobileLogo />
 }
