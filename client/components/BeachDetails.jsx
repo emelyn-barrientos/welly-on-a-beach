@@ -16,7 +16,15 @@ function BeachDetails() {
   const beach = beaches?.find((beach) => beach.id === Number(id))
 
   return (
-    <Container maxWidth="lg">
+    <Container
+      maxWidth="lg"
+      sx={{
+        display: 'flex',
+        alignContent: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column',
+      }}
+    >
       <Box m={1} display="flex" justifyContent={'center'} gap={4}>
         <HomeButton />
         <Typography
@@ -44,9 +52,11 @@ function BeachDetails() {
             return <Chip key={feature} label={feature} clickable={false} />
           })}
       </Stack>
+
       <Box>
         <Typography
           variant="body1"
+          textAlign="center"
           sx={{
             marginBlock: 1,
           }}
@@ -54,22 +64,42 @@ function BeachDetails() {
           {beach?.description}
         </Typography>
       </Box>
+
       <Box
         component="img"
         src={`/images/${id}.jpg`}
         maxWidth="md"
-        alt={beach?.name}
-        sx={{ display: 'flex', justifyContent: 'center', marginBlock: 2 }}
+        alt={beach.name}
+        sx={{
+          margin: 'auto',
+          marginBlock: 2,
+          borderRadius: '0.5rem',
+          minWidth: 'xs',
+          maxWidth: 'sm',
+          boxShadow: 1,
+        }}
       />
 
-      <a href={beach?.location} target="_blank" rel="noreferrer">
-        <img
-          src={`/images/location${id}.jpg`}
-          alt={beach?.name}
-          width={'90%vw'}
-        />
-      </a>
-
+      <Box
+        sx={{
+          margin: 'auto',
+        }}
+      >
+        <a href={beach.location} target="_blank" rel="noreferrer">
+          <Box
+            component="img"
+            src={`/images/location${id}.jpg`}
+            alt={`Link to ${beach.name} map.`}
+            sx={{
+              marginBlock: 2,
+              borderRadius: '0.5rem',
+              minWidth: 'xsx',
+              maxWidth: 'sm',
+              boxShadow: 1,
+            }}
+          />
+        </a>
+      </Box>
       <BeachReviews />
     </Container>
   )
