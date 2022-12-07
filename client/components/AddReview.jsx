@@ -45,31 +45,25 @@ function AddReview() {
         alignItems: 'center',
       }}
     >
-      <form noValidate autoComplete="off" onSubmit={handleSubmit}>
-        <TextField
-          label="Add Beach Review"
-          variant="outlined"
-          color="secondary"
-          multiline
-          margin="dense"
-          name="review"
-          alignItems="center"
-          value={newReview.review}
-          onChange={handleChange}
-        />
-        <Button
-          type="submit"
-          variant="contained"
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            marginBlock: 0.5,
-            width: '75%',
-          }}
-        >
-          Submit
-        </Button>
-      </form>
+      <Container maxWidth="md">
+        <form noValidate autoComplete="off" onSubmit={handleSubmit}>
+          <TextField
+            label="Add Beach Review"
+            variant="outlined"
+            color="secondary"
+            multiline
+            fullWidth
+            margin="dense"
+            name="review"
+            alignItems="center"
+            value={newReview.review}
+            onChange={handleChange}
+          />
+          <Button type="submit" variant="contained">
+            Submit
+          </Button>
+        </form>
+      </Container>
     </Container>
   )
 }
