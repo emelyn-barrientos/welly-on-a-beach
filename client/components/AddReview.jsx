@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 
 import { useParams } from 'react-router-dom'
 
-import { TextField, Button } from '@mui/material'
+import { TextField, Button, Container } from '@mui/material'
 import { addNewReviewThunk } from '../actions'
 
 function AddReview() {
@@ -37,23 +37,40 @@ function AddReview() {
   }
 
   return (
-    <div>
+    <Container
+      maxWidth="lg"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
         <TextField
           label="Add Beach Review"
           variant="outlined"
           color="secondary"
-          fullWidth
           multiline
+          margin="dense"
           name="review"
+          alignItems="center"
           value={newReview.review}
           onChange={handleChange}
         />
-        <Button type="submit" variant="contained">
+        <Button
+          type="submit"
+          variant="contained"
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginBlock: 0.5,
+            width: '75%',
+          }}
+        >
           Submit
         </Button>
       </form>
-    </div>
+    </Container>
   )
 }
 

@@ -19,23 +19,28 @@ function BeachReviews() {
   const reviews = beach?.reviews
 
   return (
-    <div>
-      <Container maxWidth="lg">
-        <Typography
-          variant="body1"
-          sx={{
-            marginBlock: 2,
-          }}
-        >
-          Leave a beach review!
-        </Typography>
-        {reviews &&
-          reviews.map((review) => {
-            return <ReviewCard key={review.id} review={review} />
-          })}
-        <AddReview />
-      </Container>
-    </div>
+    <Container
+      maxWidth="lg"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
+      <Typography
+        variant="h5"
+        sx={{
+          marginBlock: 2,
+        }}
+      >
+        BEACH REVIEWS
+      </Typography>
+      {reviews &&
+        reviews.map((review) => {
+          return <ReviewCard key={review.id} review={review} />
+        })}
+      <AddReview />
+    </Container>
   )
 }
 

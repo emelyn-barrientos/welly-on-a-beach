@@ -73,16 +73,15 @@ function BeachDetails() {
           margin: 'auto',
           marginBlock: 2,
           borderRadius: '0.5rem',
+          minWidth: 'xs',
           maxWidth: 'sm',
+          boxShadow: 1,
         }}
       />
 
       <Box
         sx={{
           margin: 'auto',
-          // marginBlock: 2,
-          // borderRadius: '0.5rem',
-          // maxWidth: 'sm',
         }}
       >
         <a href={beach.location} target="_blank" rel="noreferrer">
@@ -93,7 +92,9 @@ function BeachDetails() {
             sx={{
               marginBlock: 2,
               borderRadius: '0.5rem',
+              minWidth: 'xsx',
               maxWidth: 'sm',
+              boxShadow: 1,
             }}
           />
         </a>

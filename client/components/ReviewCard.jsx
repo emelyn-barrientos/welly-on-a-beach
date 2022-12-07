@@ -10,40 +10,42 @@ function ReviewCard(props) {
   const wellyDate = getLocalWellyDate(date_posted)
 
   return (
-    <div>
-      <Card
-        key={id}
+    <Card
+      key={id}
+      sx={{
+        minWidth: '50%',
+        marginBlock: 2,
+      }}
+    >
+      <CardContent
         sx={{
-          maxWidth: '90%',
-          marginBlock: 2,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          boxShadow: 1,
         }}
       >
-        <CardContent
+        <Typography
+          variant="body2"
           sx={{
-            boxShadow: 1,
+            marginBlock: 1,
           }}
         >
-          <Typography
-            variant="body2"
-            sx={{
-              marginBlock: 1,
-            }}
-          >
-            {'"' + review + '"'}
-          </Typography>
-          <Typography
-            variant="body2"
-            sx={{
-              marginBlock: 1,
-              fontStyle: 'italic',
-              fontSize: '0.75rem',
-            }}
-          >
-            Date post: {wellyDate}
-          </Typography>
-        </CardContent>
-      </Card>
-    </div>
+          {'"' + review + '"'}
+        </Typography>
+        <br />
+        <Typography
+          variant="body2"
+          sx={{
+            marginBlock: 1,
+            fontStyle: 'italic',
+            fontSize: '0.75rem',
+          }}
+        >
+          Date post: {wellyDate}
+        </Typography>
+      </CardContent>
+    </Card>
   )
 }
 
