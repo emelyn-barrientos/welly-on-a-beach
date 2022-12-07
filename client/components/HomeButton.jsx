@@ -1,11 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+
+import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded'
+import { Button } from '@mui/material'
 
 function HomeButton() {
   return (
-    <nav>
-      <p><Link to='/'>Back to Home</Link></p>
-    </nav>
+    <Button
+      variant="text"
+      sx={{ height: 90 }}
+      startIcon={<ArrowBackRoundedIcon />}
+      href="/"
+    >
+      Back
+    </Button>
   )
 }
 

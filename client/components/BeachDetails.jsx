@@ -16,20 +16,19 @@ function BeachDetails() {
   const beach = beaches?.find((beach) => beach.id === Number(id))
 
   return (
-
     <Container maxWidth="lg">
-      <HomeButton />
-
-
-      <Typography
-        variant="h1"
-        sx={{
-          marginBlock: 2,
-          textAlign: 'center',
-        }}
-      >
-        {beach?.name}
-      </Typography>
+      <Box m={1} display="flex" justifyContent={'center'} gap={4}>
+        <HomeButton />
+        <Typography
+          variant="h1"
+          sx={{
+            marginBlock: 2,
+            alignContent: 'center',
+          }}
+        >
+          {beach.name}
+        </Typography>
+      </Box>
       <Typography variant="h5" padding={2} align="center">
         Beach features
       </Typography>
@@ -40,9 +39,10 @@ function BeachDetails() {
         mb={5}
         sx={{ rowGap: 0.5 }}
       >
-        {beach && beach?.features?.map((feature) => {
-          return <Chip key={feature} label={feature} clickable={false} />
-        })}
+        {beach &&
+          beach?.features?.map((feature) => {
+            return <Chip key={feature} label={feature} clickable={false} />
+          })}
       </Stack>
       <Box>
         <Typography
