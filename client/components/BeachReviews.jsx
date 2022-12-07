@@ -16,7 +16,7 @@ function BeachReviews() {
 
   const beach = beaches.find((beach) => beach.id === Number(id))
 
-  const reviews = beach.reviews
+  const reviews = beach?.reviews
 
   return (
     <div>

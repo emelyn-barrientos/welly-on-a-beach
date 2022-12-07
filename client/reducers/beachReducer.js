@@ -1,4 +1,4 @@
-import { GET_BEACHES, GET_BEACH_FEATURES } from '../actions'
+import { GET_BEACHES, GET_BEACH_FEATURES, ADD_NEW_REVIEW } from '../actions'
 
 const initialState = []
 
@@ -16,6 +16,11 @@ const reducer = (state = initialState, action) => {
           return beach
         }
       })
+    case ADD_NEW_REVIEW:
+      // eslint-disable-next-line no-case-declarations
+      const foundBeach = state.find((beach) => beach.id === payload.beaches_id)
+      foundBeach.reviews.push(payload)
+      return [...state]
     default:
       return state
   }

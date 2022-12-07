@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 import BeachList from './BeachList'
 import BeachDetails from './BeachDetails'
@@ -12,8 +13,16 @@ import AboutPage from './AboutPage'
 import CssBaseline from '@mui/material/CssBaseline'
 import { Experimental_CssVarsProvider as CSSVarsProvider } from '@mui/material/styles'
 import { Container } from '@mui/system'
+import { getAllBeachesThunk } from '../actions'
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getAllBeachesThunk())
+  }, [])
+
+
   return (
     <div className="app">
       <CSSVarsProvider theme={theme}>
