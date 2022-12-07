@@ -8,7 +8,7 @@ import WellyWeatherData from './WellyWeatherData'
 import Header from './Header'
 import theme from '../styles/themes'
 import AboutPage from './AboutPage'
-
+import Footer from './Footer'
 
 import CssBaseline from '@mui/material/CssBaseline'
 import { Experimental_CssVarsProvider as CSSVarsProvider } from '@mui/material/styles'
@@ -22,7 +22,6 @@ function App() {
     dispatch(getAllBeachesThunk())
   }, [])
 
-
   return (
     <div className="app">
       <CSSVarsProvider theme={theme}>
@@ -35,6 +34,7 @@ function App() {
             <Route path="/beach/:id" element={<BeachDetails />} />
             <Route path="/about" element={<AboutPage />} />
           </Routes>
+          <Footer />
         </Container>
       </CSSVarsProvider>
     </div>
