@@ -116,7 +116,6 @@ export function chooseIcon(rainRate, cloudCover) {
 
 export function getWindDirectionString(windDirection) {
   let direction
-  console.log(windDirection)
   //
   if (windDirection < 202.5 && windDirection > 157.5) {
     direction = 'Southerly'
