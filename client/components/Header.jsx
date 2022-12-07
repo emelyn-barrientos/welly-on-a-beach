@@ -13,7 +13,7 @@ function Header() {
         margin={2}
         maxWidth="sm"
         align="center"
-        sx={{ display: { xs: 'blox', md: 'none' } }}
+        sx={{ display: { xs: 'block', md: 'none' } }}
       >
         <Link to={'/'}>
           <MobileWOABLogo />

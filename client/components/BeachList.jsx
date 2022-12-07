@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import BeachCard from './BeachCard'
-import About from './About'
 
 import Grid from '@mui/material/Unstable_Grid2'
 
@@ -74,10 +73,10 @@ function BeachList() {
 
   return (
     <div>
-      <About />
       <Typography
         sx={{
           marginBlock: 2,
+          paddingTop: '30px',
           textAlign: 'center',
         }}
         variant="h2"
@@ -114,9 +113,9 @@ function BeachList() {
       )}
       <Grid
         container
-        rowSpacing={{ xs: 3, sm: 5, md: 7 }}
+        rowSpacing={{ xs: 8, sm: 5, md: 7 }}
         columns={{ xs: 8, sm: 10, lg: 12 }}
-        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+        columnSpacing={{ xs: 4, sm: 2, md: 3 }}
       >
         {filteredBeaches &&
           filteredBeaches.map((beach) => {
