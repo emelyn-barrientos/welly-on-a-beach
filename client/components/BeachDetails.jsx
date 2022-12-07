@@ -16,9 +16,16 @@ function BeachDetails() {
   const beach = beaches?.find((beach) => beach.id === Number(id))
 
   return (
-    <Container maxWidth="lg">
+    <Container
+      maxWidth="lg"
+      sx={{
+        display: 'flex',
+        alignContent: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column',
+      }}
+    >
       <HomeButton />
-
       <Typography
         variant="h1"
         align="center"
@@ -29,11 +36,9 @@ function BeachDetails() {
       >
         {beach?.name}
       </Typography>
-
       <Typography variant="h5" padding={2} textAlign="center">
         Beach features
       </Typography>
-
       <Stack
         direction="row"
         spacing={1}
@@ -59,37 +64,40 @@ function BeachDetails() {
         </Typography>
       </Box>
 
-      <Container maxWidth="sm">
-        <Box
-          component="img"
-          src={`/images/${id}.jpg`}
-          maxWidth="md"
-          alt={beach.name}
-          sx={{
-            display: 'flex',
-            marginBlock: 2,
-            marginRight: '0rem',
-            borderRadius: '0.5rem',
-            maxWidth: 'sm',
-          }}
-        />
+      <Box
+        component="img"
+        src={`/images/${id}.jpg`}
+        maxWidth="md"
+        alt={beach.name}
+        sx={{
+          margin: 'auto',
+          marginBlock: 2,
+          borderRadius: '0.5rem',
+          maxWidth: 'sm',
+        }}
+      />
 
+      <Box
+        sx={{
+          margin: 'auto',
+          // marginBlock: 2,
+          // borderRadius: '0.5rem',
+          // maxWidth: 'sm',
+        }}
+      >
         <a href={beach.location} target="_blank" rel="noreferrer">
           <Box
             component="img"
             src={`/images/location${id}.jpg`}
             alt={`Link to ${beach.name} map.`}
             sx={{
-              display: 'flex',
-              borderRadius: '0.5rem',
               marginBlock: 2,
-              marginRight: '0rem',
+              borderRadius: '0.5rem',
               maxWidth: 'sm',
             }}
-          ></Box>
+          />
         </a>
-      </Container>
-
+      </Box>
       <BeachReviews />
     </Container>
   )
