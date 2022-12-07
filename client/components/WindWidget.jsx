@@ -10,7 +10,7 @@ function WindWidget({ windDirection, windSpeed, size }) {
   if (windSpeed.toString().length < 2) {
     offset = 0.45
   } else {
-    offset = 0.39
+    offset = 0.38
   }
   const { x1, y1, x2, y2 } = getPointsFromAngle(
     windDirection,
