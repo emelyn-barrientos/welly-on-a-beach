@@ -30,7 +30,7 @@ function ChipFilter({ features, selected, updateSelected }) {
                 label={feature}
                 clickable={true}
                 onClick={(e) => handleClick(e, feature)}
-                color={selected.includes(feature) ? 'primary' : 'default'}
+                color={selected.includes(feature) ? 'secondary' : 'default'}
               />
             )
           })}
