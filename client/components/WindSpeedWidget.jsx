@@ -14,7 +14,7 @@ export default function WindSpeedWidget({ windSpeed }) {
           marginTop: '1px',
         }}
       >
-        <Typography variant="body2" color="initial" align="center">
+        <Typography variant="body2" color="primary" align="center">
           Wind Speed
         </Typography>
         <Box>
@@ -31,7 +31,7 @@ export default function WindSpeedWidget({ windSpeed }) {
             />
           </svg>
         </Box>
-        <Typography variant="body1" color="initial" align="center">
+        <Typography variant="body1" color="primary" align="center">
           {windSpeed} km/hr
         </Typography>
       </div>

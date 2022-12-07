@@ -14,26 +14,14 @@ export default function Footer() {
         width: '100%',
       }}
     >
-      <Grid2
-        container
-        columns={56}
-        sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}
-      >
-        <Grid2 md={12}>
-          <Link href="/about">
-            <Typography py={2} variant="h6">
-              About WOAB
-            </Typography>
-          </Link>
-        </Grid2>
-        <Grid2>
-          <Typography variant="subtitle2">
-            Copyright WOAB 2022 &copy;
+      <Box display="flex" flexDirection="column" alignItems="center">
+        <Link href="/about">
+          <Typography py={6} variant="h6">
+            About WOAB
           </Typography>
-        </Grid2>
-      </Grid2>
-      <Box display="flex" justifyContent="center">
+        </Link>
         <Sunset />
+        <Typography variant="subtitle2">Copyright WOAB 2022 &copy;</Typography>
       </Box>
     </Box>
   )

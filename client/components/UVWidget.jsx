@@ -12,7 +12,7 @@ function UVWidget({ uv, size }) {
         className="widget-container"
         style={{ width: `${size}px`, height: `${size}px`, marginTop: '1px' }}
       >
-        <Typography variant="body2" color="initial" align="center">
+        <Typography variant="body2" color="primary" align="center">
           UV Level
         </Typography>
         <div

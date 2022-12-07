@@ -16,7 +16,7 @@ function WindWidget({ windDirection, size }) {
           marginTop: '1px',
         }}
       >
-        <Typography variant="body2" color="initial" align="center">
+        <Typography variant="body2" color="primary" align="center">
           {windDirectionString}
         </Typography>
         <Box>
