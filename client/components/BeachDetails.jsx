@@ -25,18 +25,19 @@ function BeachDetails() {
         flexDirection: 'column',
       }}
     >
-      <HomeButton />
-      <Typography
-        variant="h1"
-        align="center"
-        sx={{
-          marginBlock: 2,
-          textAlign: 'center',
-        }}
-      >
-        {beach?.name}
-      </Typography>
-      <Typography variant="h5" padding={2} textAlign="center">
+      <Box m={1} display="flex" justifyContent={'center'} gap={4}>
+        <HomeButton />
+        <Typography
+          variant="h1"
+          sx={{
+            marginBlock: 2,
+            alignContent: 'center',
+          }}
+        >
+          {beach.name}
+        </Typography>
+      </Box>
+      <Typography variant="h5" padding={2} align="center">
         Beach features
       </Typography>
       <Stack

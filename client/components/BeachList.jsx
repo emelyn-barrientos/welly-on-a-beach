@@ -77,12 +77,33 @@ function BeachList() {
       <About />
       <Typography
         sx={{
-          marginBlock: 4,
+          marginBlock: 2,
           textAlign: 'center',
         }}
         variant="h2"
       >
         Wellington beaches
+      </Typography>
+      <Typography
+        px={2}
+        pb={0.5}
+        sx={{
+          textAlign: 'center',
+        }}
+        variant="h4"
+      >
+        Beach features
+      </Typography>
+      <Typography
+        px={2}
+        pb={2}
+        sx={{
+          textAlign: 'center',
+        }}
+        variant="body2"
+      >
+        Click the chips to filter the beach list to show beaches with specific
+        features.
       </Typography>
       {features && (
         <ChipFilter
