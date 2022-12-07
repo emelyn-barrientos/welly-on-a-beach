@@ -14,7 +14,7 @@ function BeachWindWidget({ orientation, windDirection, size }) {
     >
       <Typography
         variant="body2"
-        color="initial"
+        color="primary"
         style={{ textAlign: 'center' }}
       >
         Wind Direction
