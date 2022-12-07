@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 import { useParams } from 'react-router-dom'
 
-import { Typography, Box, Tab, Container, Stack, Chip } from '@mui/material'
+import { Typography, Box, Container, Stack, Chip } from '@mui/material'
 
 import HomeButton from './HomeButton'
 import BeachReviews from './BeachReviews'
@@ -58,22 +58,36 @@ function BeachDetails() {
         </Typography>
       </Box>
 
-      <Box
-        component="img"
-        src={`/images/${id}.jpg`}
-        maxWidth="md"
-        alt={beach.name}
-        sx={{ display: 'flex', justifyContent: 'center', marginBlock: 2 }}
-      />
-
-      <a href={beach.location} target="_blank" rel="noreferrer">
+      <Container maxWidth="sm">
         <Box
           component="img"
-          src={`/images/location${id}.jpg`}
-          alt={`Link to ${beach.name} map.`}
-          sx={{ display: 'flex', align: 'center', marginBlock: 2 }}
-        ></Box>
-      </a>
+          src={`/images/${id}.jpg`}
+          maxWidth="md"
+          alt={beach.name}
+          sx={{
+            display: 'flex',
+            marginBlock: 2,
+            marginRight: '0rem',
+            borderRadius: '0.5rem',
+            maxWidth: 'sm',
+          }}
+        />
+
+        <a href={beach.location} target="_blank" rel="noreferrer">
+          <Box
+            component="img"
+            src={`/images/location${id}.jpg`}
+            alt={`Link to ${beach.name} map.`}
+            sx={{
+              display: 'flex',
+              borderRadius: '0.5rem',
+              marginBlock: 2,
+              marginRight: '0rem',
+              maxWidth: 'sm',
+            }}
+          ></Box>
+        </a>
+      </Container>
 
       <BeachReviews />
     </Container>
