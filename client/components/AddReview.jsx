@@ -55,7 +55,6 @@ function AddReview() {
             fullWidth
             margin="dense"
             name="review"
-            alignItems="center"
             value={newReview.review}
             onChange={handleChange}
           />
