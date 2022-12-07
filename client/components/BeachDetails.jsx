@@ -17,18 +17,18 @@ function BeachDetails() {
 
   return (
     <Container maxWidth="lg">
-      <HomeButton />
-
-
-      <Typography
-        variant="h1"
-        sx={{
-          marginBlock: 2,
-          textAlign: 'center',
-        }}
-      >
-        {beach.name}
-      </Typography>
+      <Box m={1} display="flex" justifyContent={'center'} gap={4}>
+        <HomeButton />
+        <Typography
+          variant="h1"
+          sx={{
+            marginBlock: 2,
+            alignContent: 'center',
+          }}
+        >
+          {beach.name}
+        </Typography>
+      </Box>
       <Typography variant="h5" padding={2} align="center">
         Beach features
       </Typography>
@@ -68,7 +68,7 @@ function BeachDetails() {
           width={'90%vw'}
         />
       </a>
-      
+
       <BeachReviews />
     </Container>
   )

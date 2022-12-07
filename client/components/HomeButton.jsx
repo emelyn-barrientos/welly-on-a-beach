@@ -5,7 +5,12 @@ import { Button } from '@mui/material'
 
 function HomeButton() {
   return (
-    <Button variant="text" startIcon={<ArrowBackRoundedIcon />} href="/">
+    <Button
+      variant="text"
+      sx={{ height: 90 }}
+      startIcon={<ArrowBackRoundedIcon />}
+      href="/"
+    >
       Back
     </Button>
   )
