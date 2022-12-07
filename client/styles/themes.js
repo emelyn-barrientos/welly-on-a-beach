@@ -12,14 +12,14 @@ const theme = extendTheme({
       main: '#0378CD',
       light: '#6BC7FF',
       dark: '#0069bd',
-      contrastText: '#000e3e',
+      contrastText: '#fff',
     },
     background: {
       default: '#fafaff',
     },
     text: {
       primary: '#273469',
-      secondary: '#1A96F0',
+      secondary: '#273469',
     },
   },
   typography: {
