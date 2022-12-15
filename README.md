@@ -17,6 +17,7 @@ We had only 7-days to build a full stack web app and we're extremely pleased wit
 - Redux Thunk
 - Material UI
 - MetService API
+- Knex.js
 - SQLite3
 - Dokku (deployment)
 
