@@ -26,7 +26,7 @@ We had only 7-days to build a full stack web app and we're extremely pleased wit
 - [ ] Test databases and API with Jest
 - [ ] Refactor code
 
-### Below is our team planning guide and reflections from the project! 
+# Below is our team planning guide and reflections from the project! 
 
 ## Members
 * Paola
@@ -43,9 +43,7 @@ We had only 7-days to build a full stack web app and we're extremely pleased wit
 * Reducer files will have reducer in name: ex) beachesReducer.js
 
 
-** TEAM HUMAN SKILLS
-
-# Expectations and Agreements:
+## Expectations and Agreements:
 
 We agree that the expectation is the normal 9-5, but if team members want to do extra thats okay too but there is no pressure. 
 
