@@ -1,10 +1,10 @@
 # About Wellington On a Beach 🏖️
 
-🔗 woab.devacademy.nz
+🔗 https://woab.devacademy.nz
 
 Which beach in Wellington should you go to based on the conditions?
 
-Wellington on a Beach (WOAB) is the final project I shared with four other developers for Hihi 2022 cohort of Dev Academy Aotearoa. 
+Wellington On a Beach (WOAB) is the final project I shared with four other developers for Hihi 2022 cohort of Dev Academy Aotearoa. 
 
 Additionally, I servered as our team's product owner to ensure that we all worked toward a cohesive vision for the MVP, helped prioritise workflow, and centered the user journey for our features. 
 
