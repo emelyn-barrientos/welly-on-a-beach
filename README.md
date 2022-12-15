@@ -26,7 +26,7 @@ We had only 7-days to build a full stack web app and we're extremely pleased wit
 - [ ] Test databases and API with Jest
 - [ ] Refactor code
 
-Below is our team planning guide and reflections from the project! 
+### Below is our team planning guide and reflections from the project! 
 
 ## Members
 * Paola
