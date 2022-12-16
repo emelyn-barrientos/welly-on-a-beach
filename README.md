@@ -1,6 +1,19 @@
 # About Wellington On a Beach 🏖️
 
-🔗 https://woab.devacademy.nz
+🔗 https://woab.devacademy.nz (DOKKU SERVER CURRENTLY DOWN)
+
+## INSTALL FROM COMMAND-LINE
+``
+git clone git@github.com:emelyn-barrientos/welly-on-a-beach.git
+cd welly-on-a-beach
+npm install # to install dependencies
+npm run knex migrate:latest
+npm run knex seed:run
+npm run dev # to start the dev server
+``
+You can find the server running on http://localhost:3000.
+
+
 
 Which beach in Wellington should you go to based on the conditions?
 
