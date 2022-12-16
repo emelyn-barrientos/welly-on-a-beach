@@ -2,6 +2,14 @@
 
 🔗 https://woab.devacademy.online/ (new domain!)
 
+Which beach in Wellington should you go to based on the conditions?
+
+Wellington On a Beach (WOAB) is the final project I shared with four other developers for Hihi 2022 cohort of Dev Academy Aotearoa. 
+
+Additionally, I servered as our team's product owner to ensure that we all worked toward a cohesive vision for the MVP, helped prioritise workflow, and centered the user journey for our features. 
+
+We had only 7-days to build a full stack web app and we're extremely pleased with what we produced! 
+
 
 ## INSTALL FROM COMMAND-LINE
 ```
@@ -14,16 +22,6 @@ npm run dev # to start the dev server
 ```
 
 You can find the server running on [http://localhost:3000](http://localhost:3000).
-
-
-
-Which beach in Wellington should you go to based on the conditions?
-
-Wellington On a Beach (WOAB) is the final project I shared with four other developers for Hihi 2022 cohort of Dev Academy Aotearoa. 
-
-Additionally, I servered as our team's product owner to ensure that we all worked toward a cohesive vision for the MVP, helped prioritise workflow, and centered the user journey for our features. 
-
-We had only 7-days to build a full stack web app and we're extremely pleased with what we produced! 
 
 ## TECH USED 👩🏽‍💻 ##
 - JavaScript
