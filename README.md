@@ -30,11 +30,13 @@ You can find the server running on [http://localhost:3000](http://localhost:3000
 - Redux Thunk
 - Material UI
 - MetService API
+- NIWA UV API
 - Knex.js
 - SQLite3
 - Dokku (deployment)
 
 ## NEXT STEPS ▶️ ##
+- [ ] Fixing API key connections
 - [ ] Adding full site reponsiveness
 - [ ] Fix comment section in PostGres
 - [ ] Test databases and API with Jest
