@@ -1,6 +1,7 @@
 # About Wellington On a Beach 🏖️
 
-🔗 https://woab.devacademy.nz (DOKKU SERVER CURRENTLY DOWN)
+🔗 https://woab.devacademy.online/ (new domain!)
+
 
 ## INSTALL FROM COMMAND-LINE
 ```
