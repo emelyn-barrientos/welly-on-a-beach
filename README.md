@@ -1,7 +1,5 @@
 # About Wellington On a Beach 🏖️
 
-🔗 https://woab.devacademy.online/ (new domain!)
-
 Wellington On a Beach (WOAB) is the final project I worked on with four other aspiring developers from the Hihi 2022 cohort at Dev Academy Aotearoa. The app's goal is to help Wellingtonians find the best beach based on weather conditions (as locals, we all know that Welly beaches can be notoriously windy!).
 
 On this project, I was a developer as well as our team's product owner. A key feature of my role was to ensure that we all worked toward a cohesive vision for the MVP, helped prioritise workflow, and centered the user journey for our features.
